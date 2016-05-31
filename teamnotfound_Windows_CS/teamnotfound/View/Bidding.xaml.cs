@@ -50,7 +50,7 @@ namespace teamnotfound
         {
             this.InitializeComponent();
         }
-        private async void createCountry()
+        /*private async void createCountry()
         {
             var count = new admin_key {Id="a1b2c3d4" ,Key="qazwsxed1234"};
             await InsertCountry(count);
@@ -65,7 +65,7 @@ namespace teamnotfound
 
 
             //await App.MobileService.SyncContext.PushAsync(); // offline sync
-        }
+        }*/
         private async void getCountry()
         {
             items = await countryTable

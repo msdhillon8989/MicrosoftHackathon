@@ -51,7 +51,7 @@ namespace teamnotfound.View
         private void MyProject_Tapped(object sender, TappedRoutedEventArgs e)
         {
            MySplitView.IsPaneOpen = false;
-            myFrame.Navigate(typeof(MyPost));
+           myFrame.Navigate(typeof(SearchProject));
         }
         private void Profile_Tapped(object sender, TappedRoutedEventArgs e)
         {

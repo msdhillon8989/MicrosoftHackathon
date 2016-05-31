@@ -107,6 +107,7 @@ namespace teamnotfound.View
             userCred.Password = PasswordTextBox.Password;
             ComboBoxItem item = comboBox.SelectedItem as ComboBoxItem;
             string userType = item.Content.ToString();
+            int flag = 0;
             if (userType == "Admin")
             {
                 var keyValue = AdminKeyTextBox.Text;
@@ -119,33 +120,39 @@ namespace teamnotfound.View
                     dialog.Title = "Alert";
                     dialog.Commands.Add(new UICommand("Ok") { Id = 1 });
                     var result = await dialog.ShowAsync();
+                    flag = 0;
                 }
                 else
                 {
                     user.UserType = "Admin";
+                    flag = 1;
                 }
 
             }
             else if (userType == "User")
             {
                 user.UserType = "Üser";
+                flag = 1;
             }
-            var userNameList = await usertable
-                                    .Where(usr => usr.Email == user.Email)
-                                    .ToListAsync();
-            if (userNameList.Count !=0)
+            if (flag == 1)
             {
-                var dialog = new MessageDialog("User is already present");
-                dialog.Title="Alert";
-                dialog.Commands.Add(new UICommand("Ok") { Id=1});
-                var result = await dialog.ShowAsync();
-            }
-            else
-            {
-                await InsertUser(user);
-                Global.SetRepositoryValue("userName", user.Email);
-                await InsertUserCred(userCred);
-                Frame.Navigate(typeof(DashBoard));
+                var userNameList = await usertable
+                                        .Where(usr => usr.Email == user.Email)
+                                        .ToListAsync();
+                if (userNameList.Count != 0)
+                {
+                    var dialog = new MessageDialog("User is already present");
+                    dialog.Title = "Alert";
+                    dialog.Commands.Add(new UICommand("Ok") { Id = 1 });
+                    var result = await dialog.ShowAsync();
+                }
+                else
+                {
+                    await InsertUser(user);
+                    Global.SetRepositoryValue("userName", user.Email);
+                    await InsertUserCred(userCred);
+                    Frame.Navigate(typeof(DashBoard));
+                }
             }
         }
 
