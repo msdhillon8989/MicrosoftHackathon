@@ -17,6 +17,10 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+#Temp Folder
+teamnotfound_Windows_CS/teamnotfound/obj
+teamnotfound_Windows_CS/teamnotfound/bin
+
 # =========================
 # Operating System Files
 # =========================

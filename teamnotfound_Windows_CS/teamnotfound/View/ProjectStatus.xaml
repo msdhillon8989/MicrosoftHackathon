@@ -1,0 +1,41 @@
+﻿
+<Page
+    x:Class="teamnotfound.View.ProjectStatus"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:teamnotfound.View"
+    xmlns:data="using:teamnotfound.DataModel"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid HorizontalAlignment="Stretch" Background="Gray">
+
+
+        <StackPanel VerticalAlignment="Top" Margin="0,0,0,0" Background="#FF060656" >
+            <TextBlock x:Name="Hello"  HorizontalAlignment="Center"   Style="{StaticResource HeaderTextBlockStyle}" TextWrapping="Wrap" Text="Events Status" Height="75" SelectionHighlightColor="#FF334676"  Foreground="Gray" />
+        </StackPanel>
+
+        <StackPanel Background="#FFdddddd"   Margin="10,90,10,10">
+            
+
+            <TextBlock x:Name="textBlock_Copy" Foreground="#FF060656" HorizontalAlignment="Left" Margin="10,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" >
+        		<Run Text="Project Description"/>
+        		<Run Foreground="Red" Text="*"/>
+            </TextBlock>
+
+
+            <TextBox x:Name="description" HorizontalAlignment="Stretch" Margin="10,10,10,0"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="86"/>
+
+            <TextBlock Foreground="#FF060656" x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="10,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+        		<Run Text="Budget"/>
+        		<Run Foreground="Red" Text="*"/>
+            </TextBlock>
+            <TextBox x:Name="bid" HorizontalAlignment="Stretch" Margin="10,10,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"    InputScope="Number"/>
+            <Button x:Name="UpdateButton" FontWeight="Bold" Visibility="Collapsed" Foreground="gray" FontSize="20" Background="#FF060656" Content="Update" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Width="245" Click="UpdateButton_Click"/>
+            <Button x:Name="DownloadButton" FontWeight="Bold" Visibility="Collapsed" Foreground="gray" FontSize="20" Background="#FF060656" Content="Downlaod" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Width="245" Click="DownloadButton_Click"/>
+            <Button x:Name="Download" FontWeight="Bold"  Foreground="gray" FontSize="20" Background="#FF060656" Content="Downlaod" HorizontalAlignment="Center" Margin="0,30,0,0" VerticalAlignment="Top" Width="245" Click="DownloadButton_Click"/>
+
+        </StackPanel>
+    </Grid>
+</Page>

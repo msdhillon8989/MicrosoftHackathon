@@ -1,0 +1,28 @@
+﻿<Page
+    x:Class="teamnotfound.MyProjects"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:teamnotfound"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:teamnotfound.DataModel"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock Text="MY PROJECTS" HorizontalAlignment="center" FontSize="30" Margin="50" FontWeight="Bold"></TextBlock>
+        <ListView Name="gridView" Margin="63,97,63,-76" IsItemClickEnabled="False">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="data:Project">
+                    <StackPanel HorizontalAlignment="Center" Background="DimGray" Tapped="Project_Tapped">
+                        <TextBlock FontSize="16" Text="{x:Bind Description}"></TextBlock>
+                        <TextBlock x:Name="projectId" FontSize="10" Text="{x:Bind Id}" Visibility="Collapsed"></TextBlock>
+                        <TextBlock FontSize="10" Text="{x:Bind Bid}"></TextBlock>
+                        <TextBlock FontSize="10" Text="{x:Bind Owner}"></TextBlock>
+                        <TextBlock x:Name="txtStatus" FontSize="10" Text="{x:Bind Status}"></TextBlock>
+
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
