@@ -73,12 +73,13 @@ namespace teamnotfound.View
         {
             User user = new User();
             UserCred userCred = new UserCred();
-            user.Fname = FirstNameTextBox.Text;
-            user.Lname = LastNameTextBox.Text;
-            user.Mobile = MobileTextBox.Text;
-            user.Email = EmailTextBox.Text;
-            userCred.UserName = user.Email;
-            userCred.Password = PasswordTextBox.Password;
+  //          user.Fname = FirstNameTextBox.Text;
+  //          user.Lname = LastNameTextBox.Text;
+  //          user.Mobile = MobileTextBox.Text;
+  //          user.Email = EmailTextBox.Text;
+  //          userCred.UserName = user.Email;
+  //          userCred.Password = PasswordTextBox.Password;
+
             var userName = usertable.Where(usr => usr.Email == user.Email);
             if(userName != null)
             {
@@ -114,10 +115,8 @@ namespace teamnotfound.View
         {
             User user = new User();
             UserCred userCred = new UserCred();
-            user.Fname = FirstNameTextBox.Text;
-            user.Lname = LastNameTextBox.Text;
-            user.Mobile = MobileTextBox.Text;
-           /* string temp;
+            user.Fname = name.Text;
+            /* string temp;
             SummaryTextBox.Document.GetText(TextGetOptions.None, out temp);
             var range = SummaryTextBox.Document.GetRange(0, temp.Length - 1);
             user.Summary = range.Text;*/
@@ -141,38 +140,20 @@ namespace teamnotfound.View
             }
         }
 
-        private void FirstNameTextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if(FirstNameTextBox.Text == "")
-            {
-                FnameErrorTextBox.Text = "Enter First Name";
-            }
-            else
-            {
-                FnameErrorTextBox.Text = "";
-            }
-        }
+     
 
-        private void MobileTextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (MobileTextBox.Text == "")
-            {
-                MobileErrorTextBox.Text = "Enter mobile number";
-            }
-            else
-            {
-                MobileErrorTextBox.Text = "";
-            }
-        }
+      
 
         private void EmailTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             if (EmailTextBox.Text == "")
             {
+                EmailErrorTextBox.Visibility = Visibility.Visible;
                 EmailErrorTextBox.Text = "Enter email Id";
             }
             else
             {
+                EmailErrorTextBox.Visibility = Visibility.Collapsed;
                 EmailErrorTextBox.Text = "";
             }
         }
@@ -181,24 +162,16 @@ namespace teamnotfound.View
         {
             if (PasswordTextBox.Password == "")
             {
+                PassErrorTextBox.Visibility = Visibility.Visible;
                 PassErrorTextBox.Text = "Enter the password";
             }
             else
             {
+                PassErrorTextBox.Visibility = Visibility.Collapsed;
                 PassErrorTextBox.Text = "";
             }
         }
-        private void KeyTextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (AdminKeyTextBox.Text == "")
-            {
-                AdminKeyErrorTextBox.Text = "Enter the admin key";
-            }
-            else
-            {
-                AdminKeyErrorTextBox.Text = "";
-            }
-        }
+      
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -213,6 +186,18 @@ namespace teamnotfound.View
             else if (userType == "User")
             {
                 AdminKey.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private void AdminKeyErrorTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (AdminKeyTextBox.Text == "")
+            {
+                AdminKeyErrorTextBox.Text = "Enter the admin key";
+            }
+            else
+            {
+                AdminKeyErrorTextBox.Text = "";
             }
         }
     }

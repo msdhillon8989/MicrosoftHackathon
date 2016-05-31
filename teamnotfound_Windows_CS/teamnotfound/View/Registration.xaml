@@ -2,92 +2,65 @@
     x:Class="teamnotfound.View.Registration"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:TeamNotFound.View"
+    xmlns:local="using:teamnotfound.View"
+    xmlns:data="using:teamnotfound.DataModel"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" >
-    <Page.Background>
-        <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/black-background_00313351.png"/>
-    </Page.Background>
-   
-        <Grid>
-            
-        <ScrollViewer  VerticalScrollBarVisibility="Auto">
-            <VisualStateManager.VisualStateGroups>
-                <VisualStateGroup>
-                    <VisualState>
-                        <VisualState.StateTriggers>
-                            <!--VisualState to be triggered when window width is >=720 effective pixels.-->
-                            <AdaptiveTrigger MinWindowWidth="720" />
-                        </VisualState.StateTriggers>
+    mc:Ignorable="d">
 
-                        <VisualState.Setters>
-                            <Setter Target="myPanel.Orientation" Value="Horizontal" />
-                        </VisualState.Setters>
-                    </VisualState>
-                </VisualStateGroup>
-            </VisualStateManager.VisualStateGroups>
-            <StackPanel x:Name="myPanel" Orientation="Vertical" RequestedTheme="Dark" Margin="0,75,0,0" >
-                <StackPanel.Background>
-                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/black-background_00313351.png"/>
-                </StackPanel.Background>
+    <Grid HorizontalAlignment="Stretch" Background="Gray">
 
-                <StackPanel Orientation="Vertical" Padding="0,10,0,0" Margin="0">
-                    <TextBox Header="First Name" x:Name="FirstNameTextBox" TextWrapping="Wrap" Text="" Background="#FFBFB7B7" Width="250" VerticalAlignment="Center" BorderThickness="2,2,0,2" HorizontalAlignment="Center" Height="65" Margin="55,0" LostFocus="FirstNameTextBox_LostFocus" />
-                    <TextBlock x:Name="FnameErrorTextBox" Foreground="Red" Text="" HorizontalAlignment="Center"></TextBlock>
 
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Padding="0,10,0,0" Margin="0">
-                    <TextBox Header="Last Name"  x:Name="LastNameTextBox" TextWrapping="Wrap" Text="" Background="#FFBFB7B7" Width="250" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0" BorderThickness="0"/>
+        <StackPanel VerticalAlignment="Top" Margin="0,0,0,0" Background="#FF060656" >
+            <TextBlock x:Name="Hello"  HorizontalAlignment="Center"   Style="{StaticResource HeaderTextBlockStyle}" TextWrapping="Wrap" Text="Registration" Height="75" SelectionHighlightColor="#FF334676"  Foreground="Gray" />
+        </StackPanel>
 
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Padding="0,10,0,0" Margin="0">
-                    <TextBlock Text="Register as"  x:Name="RegisterAsText" TextWrapping="Wrap" Width="250" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0"/>
-                    <ComboBox x:Name="comboBox" Width="250" HorizontalAlignment="Stretch"  Background="#FFBFB7B7" VerticalAlignment="Stretch" RenderTransformOrigin="0.556,-14.469"  BorderThickness="0" SelectionChanged="comboBox_SelectionChanged">
-                        <ComboBoxItem Name="Admin">Admin</ComboBoxItem>
-                        <ComboBoxItem Name="User">User</ComboBoxItem>
-                    </ComboBox>
-                </StackPanel>
-                <StackPanel Visibility="Collapsed" x:Name="AdminKey" Orientation="Vertical" Padding="0,10,0,0" Margin="0">
-                    <TextBox Header="Admin Key" x:Name="AdminKeyTextBox" TextWrapping="Wrap" Text="" Background="#FFBFB7B7" Width="250" VerticalAlignment="Center" BorderThickness="2,2,0,2" HorizontalAlignment="Center" Height="65" Margin="55,0" LostFocus="KeyTextBox_LostFocus"/>
-                    <TextBlock x:Name="AdminKeyErrorTextBox" Foreground="Red" Text="" HorizontalAlignment="Center"></TextBlock>
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Padding="0,10,0,0">
-                    <TextBox Header="Mobile No"  x:Name="MobileTextBox" TextWrapping="Wrap" Text="" Background="#FFBFB7B7" Width="250" HorizontalAlignment="Center" Margin="0" LostFocus="MobileTextBox_LostFocus"/>
-                    <TextBlock x:Name="MobileErrorTextBox" Foreground="Red" Text="" HorizontalAlignment="Center"></TextBlock>
+        <StackPanel Background="#FFdddddd"   Margin="10,90,10,10">
+            <TextBlock  Foreground="#FF060656" HorizontalAlignment="Left"  Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" >
+        		<Run Text="Name"/>
+        		
+            </TextBlock>
+            <TextBox x:Name="name" HorizontalAlignment="Stretch" Margin="10,5,10,0"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
 
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Padding="0,10,0,0" Height="87">
-                    <TextBox  Header="Email" x:Name="EmailTextBox" TextWrapping="Wrap" Text=""  Background="#FFBFB7B7" HorizontalAlignment="Center" Width="250" LostFocus="EmailTextBox_LostFocus" Height="56" Margin="55,0" />
-                    <TextBlock x:Name="EmailErrorTextBox" Foreground="Red" Text="" HorizontalAlignment="Center"></TextBlock>
 
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Padding="0,10,0,0">
-                    <PasswordBox Header="Password" x:Name="PasswordTextBox"  Background="#FFBFB7B7" Width="250" HorizontalAlignment="Center" LostFocus="PasswordTextBox_LostFocus" />
-                    <TextBlock x:Name="PassErrorTextBox" Foreground="Red" Text="" HorizontalAlignment="Center"></TextBlock>
+            <TextBlock x:Name="textBlock" Foreground="#FF060656" HorizontalAlignment="Left"  Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" >
+        		<Run Text="Email"/>
+        		<Run Foreground="Red" Text="*"/>
+            </TextBlock>
+            <TextBox LostFocus="EmailTextBox_LostFocus" x:Name="EmailTextBox" HorizontalAlignment="Stretch" Margin="10,5,10,0"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
+            <TextBlock x:Name="EmailErrorTextBox" Visibility="Collapsed" Foreground="Red" Margin="10,0,10,0" Text="" HorizontalAlignment="Stretch"></TextBlock>
 
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Padding="0,10,0,0">
-                    <PasswordBox Header="Re-Enter Password"   x:Name="RePasswordTextBox"  Background="#FFBFB7B7" Width="250" HorizontalAlignment="Center" LostFocus="RePasswordTextBox_LostFocus"/>
-                    <TextBlock x:Name="RePassErrorTextBox" Foreground="Red" Text="" HorizontalAlignment="Center"></TextBlock>
-                </StackPanel>
-                <!--" <StackPanel Orientation="Vertical">
-                    <TextBlock  Style="{StaticResource SubtitleTextBlockStyle}" TextWrapping="Wrap" Text="Summary" Foreground="White"  d:LayoutOverrides="Width" HorizontalAlignment="Center"/>
-                    <RichEditBox x:Name="SummaryTextBox" Background="#FFBFB7B7" Width="250" HorizontalAlignment="Center" Height="90" Margin="73,0"/>
-                </StackPanel>-->
-                <Grid Margin="110,0,150,0" HorizontalAlignment="Stretch" RenderTransformOrigin="0.625,0.354" >
-                    <Button Content="Register" Width="75"  HorizontalAlignment="Left" Click="RegisterButton_click"  d:LayoutOverrides="HorizontalAlignment"/>
-                    <Button Content="Add Skill" Width="85" HorizontalAlignment="Right" d:LayoutOverrides="HorizontalAlignment, Height, TopPosition, BottomPosition" VerticalAlignment="Stretch"/>
-                </Grid>
+
+
+            <TextBlock Foreground="#FF060656" x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+        		<Run Text="Password"/>
+        		<Run Foreground="Red" Text="*"/>
+            </TextBlock>
+            <PasswordBox LostFocus="PasswordTextBox_LostFocus" x:Name="PasswordTextBox"  HorizontalAlignment="Stretch" Margin="10,5,10,0"  VerticalAlignment="Top"    />
+            <TextBlock x:Name="PassErrorTextBox" Visibility="Collapsed" Foreground="Red" Margin="10,0,10,0" Text="" HorizontalAlignment="Stretch"></TextBlock>
+
+            <TextBlock Foreground="#FF060656"  HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+        		<Run Text="Confirm Password"/>
+        		<Run Foreground="Red" Text="*"/>
+            </TextBlock>
+            <PasswordBox x:Name="RePasswordTextBox"  HorizontalAlignment="Stretch" Margin="10,5,10,0"  VerticalAlignment="Top"    />
+            <TextBlock x:Name="RePassErrorTextBox" Visibility="Collapsed" Foreground="Red" Margin="10,0,10,0" Text="" HorizontalAlignment="Stretch"></TextBlock>
+
+            <TextBlock Text="Register as"  x:Name="RegisterAsText" Margin="10,10,10,0" TextWrapping="Wrap"  HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+            <ComboBox x:Name="comboBox"  HorizontalAlignment="Stretch" Margin="10,5,10,0"   VerticalAlignment="Stretch" RenderTransformOrigin="0.556,-14.469"   SelectionChanged="comboBox_SelectionChanged">
+                    <ComboBoxItem Name="Admin">Admin</ComboBoxItem>
+                    <ComboBoxItem Name="User">User</ComboBoxItem>
+             </ComboBox>
+
+            <StackPanel Visibility="Collapsed" x:Name="AdminKey" Orientation="Vertical"  >
+                
+                <TextBox Header="Admin Key" x:Name="AdminKeyTextBox" Margin="10,5,10,0" TextWrapping="Wrap" Text=""   VerticalAlignment="Top"  HorizontalAlignment="Stretch"   LostFocus="KeyTextBox_LostFocus"/>
+                <TextBlock x:Name="AdminKeyErrorTextBox" Foreground="Red" Text=""  LostFocus="AdminKeyErrorTextBox_LostFocus" HorizontalAlignment="Stretch"></TextBlock>
             </StackPanel>
-        </ScrollViewer>
 
 
-        <Canvas Height="76" VerticalAlignment="Top" Background="#FF060656" HorizontalAlignment="Stretch">
 
-                <TextBlock x:Name="textBlock"   Style="{StaticResource HeaderTextBlockStyle}" TextWrapping="Wrap" Text="Register  " Height="75" SelectionHighlightColor="#FF334676" Width="175" Canvas.Left="135" Foreground="#FFCDA3A3" />
-            </Canvas>
+            <Button x:Name="button1" FontWeight="Bold" Foreground="gray" FontSize="20" Background="#FF060656" Content="Register" HorizontalAlignment="Center" Margin="0,20,0,0" VerticalAlignment="Top" Width="245" Click="RegisterButton_click"/>
+        </StackPanel>
     </Grid>
-
-    
 </Page>
