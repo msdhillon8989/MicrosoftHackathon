@@ -20,27 +20,37 @@ namespace teamnotfound.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class DashboardAdmin : Page
+    public sealed partial class DashBoardAdmin : Page
     {
-        public DashboardAdmin()
+        public DashBoardAdmin()
         {
             this.InitializeComponent();
+        }
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
+        {
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
         }
         private void PostEvent_Tapped(object sender, TappedRoutedEventArgs e)
         {
             MySplitView.IsPaneOpen = false;
-            myFrame.Navigate(typeof(MyProjects));
+            myFrame.Navigate(typeof(PostProject));
         }
         private void MyPosts_Tapped(object sender, TappedRoutedEventArgs e)
         {
             MySplitView.IsPaneOpen = false;
-            myFrame.Navigate(typeof(SearchEvent));
+            myFrame.Navigate(typeof(MyPost));
         }
         private void History_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            MySplitView.IsPaneOpen = false;
+
+        }
+        private void Logout_Tapped(object sender, RoutedEventArgs e)
+        {
+            //MySplitView.IsPaneOpen = false;
             //Load the custom page
-            myFrame.Navigate(typeof(Profile));
+            Frame.Navigate(typeof(Login));
+
+            //Global.SetRepositoryValue("userName", "");
         }
     }
 }

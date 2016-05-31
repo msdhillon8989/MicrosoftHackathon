@@ -78,7 +78,7 @@ namespace teamnotfound.View
 
                 if(user.ElementAt(0).UserType=="Admin")
                 {
-                    Frame.Navigate(typeof(DashboardAdmin));
+                    Frame.Navigate(typeof(DashBoardAdmin));
                 }
                 else
                 {

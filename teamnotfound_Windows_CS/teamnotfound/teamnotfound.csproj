@@ -135,6 +135,9 @@
     <Compile Include="View\DashBoard.xaml.cs">
       <DependentUpon>DashBoard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DashBoardAdmin.xaml.cs">
+      <DependentUpon>DashBoardAdmin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\EditProfile.xaml.cs">
       <DependentUpon>EditProfile.xaml</DependentUpon>
     </Compile>
@@ -161,6 +164,9 @@
     </Compile>
     <Compile Include="View\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SearchEvent.xaml.cs">
+      <DependentUpon>SearchEvent.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SearchProject.xaml.cs">
       <DependentUpon>SearchProject.xaml</DependentUpon>
@@ -226,6 +232,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\DashBoardAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\EditProfile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -262,9 +272,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\SearchProject.xaml">
+    <Page Include="View\SearchEvent.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SearchProject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SlidePanel.xaml">
       <SubType>Designer</SubType>
