@@ -26,6 +26,9 @@ namespace teamnotfound.View
         public BillingPage()
         {
             this.InitializeComponent();
+        }
+        private void Proceed_Click(object sender, RoutedEventArgs e)
+        {
             Button1_Click();
         }
         private void Button1_Click()
@@ -45,15 +48,15 @@ namespace teamnotfound.View
         {
             var mycust = new StripeCustomerCreateOptions();
             SourceCard card = new SourceCard();
-            card.Number = "4242424242424242";
-            card.Name = "Yathiraj U";
-            card.ExpirationMonth = "10";
-            card.ExpirationYear = "2016";
+            card.Number = card1.Text + card2.Text + card3.Text + card4.Text; ;
+            card.Name = nameOnCard.Text;
+            card.ExpirationMonth = month.Text;
+            card.ExpirationYear = year.Text;
             card.AddressCountry = "USA";
             card.ReceiptEmail = "uryathi834@gmail.com";
             card.AddressCity = "abc";
             mycust.Email = "uryathi834 @gmail.com";
-            card.Cvc = "123";
+            card.Cvc = cvv.Text;
             mycust.PlanId = "123456";
            // mycust.TrialEnd =
             mycust.Description = "Rahul Pandey(rahul@gmail.com)";

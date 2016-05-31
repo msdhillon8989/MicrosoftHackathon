@@ -36,9 +36,9 @@ namespace teamnotfound
         {
             parameter = e.Parameter as string;
             //Debug.Write("param1: " + parameter);
-            getProjects(parameter);
+            //getProjects(parameter);
         }
-        public SearchProject()
+        /*public SearchProject()
         {
             this.InitializeComponent();
            // Debug.Write("param: " + parameter);
@@ -85,7 +85,7 @@ namespace teamnotfound
             }
             Debug.Write("Text: " + text);
             Frame.Navigate(typeof(Bidding),param);
-        }
+        }*/
         
     }
 }
