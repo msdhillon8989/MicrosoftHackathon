@@ -16,7 +16,7 @@
 
         <StackPanel Background="#FFdddddd"   Margin="10,90,10,10">
 
-            <StackPanel Orientation="Vertical"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" Tapped="StackPanel_Tapped">
+            <StackPanel Orientation="Vertical"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656">
 
                 <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
 
@@ -29,8 +29,8 @@
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Margin="35,0,0,0" Padding="5,5,5,5"  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"   >
 
-                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   Tapped="StackPanel_Tapped">
-                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Tapped="TextBlock_Tapped" Text="Bid : " ></TextBlock>
+                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"  >
+                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="Bid : " ></TextBlock>
                             <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text=" $60M" ></TextBlock>
                         </StackPanel>
 
@@ -49,7 +49,7 @@
             </StackPanel>
 
 
-            <StackPanel Orientation="Vertical"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" Tapped="StackPanel_Tapped">
+            <StackPanel Orientation="Vertical"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656">
 
                 <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
 
@@ -62,8 +62,8 @@
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Margin="35,0,0,0" Padding="5,5,5,5"  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"   >
 
-                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   Tapped="StackPanel_Tapped">
-                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Tapped="TextBlock_Tapped" Text="Bid : " ></TextBlock>
+                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="Bid : " ></TextBlock>
                             <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text=" $58M" ></TextBlock>
                         </StackPanel>
 
@@ -82,7 +82,7 @@
             </StackPanel>
 
 
-            <StackPanel Orientation="Vertical"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" Tapped="StackPanel_Tapped">
+            <StackPanel Orientation="Vertical"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656">
 
                 <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
 
@@ -95,8 +95,8 @@
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Margin="35,0,0,0" Padding="5,5,5,5"  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"   >
 
-                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   Tapped="StackPanel_Tapped">
-                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Tapped="TextBlock_Tapped" Text="Bid : " ></TextBlock>
+                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"  >
+                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Bid : " ></TextBlock>
                             <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text=" $56M" ></TextBlock>
                         </StackPanel>
 

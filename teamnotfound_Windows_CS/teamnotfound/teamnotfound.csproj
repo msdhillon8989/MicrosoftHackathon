@@ -124,6 +124,9 @@
     <Compile Include="View\Bidding.xaml.cs">
       <DependentUpon>Bidding.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\BillingPage.xaml.cs">
+      <DependentUpon>BillingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DashBoard.xaml.cs">
       <DependentUpon>DashBoard.xaml</DependentUpon>
     </Compile>
@@ -203,6 +206,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\Bidding.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\BillingPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
