@@ -10,7 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using teamnotfound.Common;
-using TeamNotFound.Models;
+using teamnotfound.DataModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
