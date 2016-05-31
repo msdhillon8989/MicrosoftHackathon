@@ -28,25 +28,25 @@ namespace teamnotfound.View
     /// </summary>
     public sealed partial class PostProject : Page
     {
-        private IMobileServiceTable<Project> projectTable = App.MobileService.GetTable<Project>();
-        private IMobileServiceTable<Category> categoryTable = App.MobileService.GetTable<Category>();
-        private MobileServiceCollection<Category, Category> items;
+        private IMobileServiceTable<Event> projectTable = App.MobileService.GetTable<Event>();
+       private IMobileServiceTable<Country> countryTAble = App.MobileService.GetTable<Country>();
+       private MobileServiceCollection<Country, Country> items;
         public PostProject()
         {
             this.InitializeComponent();
-        //    getCategory();
+           getCategory();
         }
 
 
         private async Task getCategory()
         {
-            items = await categoryTable.ToCollectionAsync();
-            
+            items = await countryTAble.ToCollectionAsync();
+            location.ItemsSource = items;
         //    type.ItemsSource = items;
         }
 
 
-        private async Task InsertProject(Project project)
+        private async Task InsertEvent(Event project)
         {
             // This code inserts a new TodoItem into the database. When the operation completes
             // and Mobile Apps has assigned an Id, the item is added to the CollectionView
@@ -59,13 +59,39 @@ namespace teamnotfound.View
 
         private async void button_Click(object sender, RoutedEventArgs e)
         {
-       /*     var selected = type.SelectedIndex;
+            var selected = location.SelectedIndex;
             Debug.Write(selected);
             var selectedValue = items.ElementAtOrDefault(selected);
-            Debug.Write(selectedValue.Name+"  "+ selectedValue.Id);
-            var project = new Project {  Description = description.Text, Bid = Int32.Parse(bid.Text), Owner = Global.GetRepositoryValue("userName").ToString() , Type= selectedValue.Id, Status="Bidding" };
-            await InsertProject(project);
-        */
+            Debug.Write(selectedValue.CountryName + "  "+ selectedValue.Id);
+       //     var project = new Project {  Description = description.Text, Bid = Int32.Parse(bid.Text), Owner = Global.GetRepositoryValue("userName").ToString() , Type= selectedValue.Id, Status="Bidding" };
+        //    await InsertProject(project);
+
+            var event1 = new Event();
+
+            event1.Location = selectedValue.CountryName;
+            DateTimeOffset sourceTime = endDate.Date;
+           
+            event1.EndDate = sourceTime.DateTime;
+
+            sourceTime = startDate.Date;
+            event1.StartDate = sourceTime.DateTime;
+
+            sourceTime = bidEndDate.Date;
+            event1.CloseDate = sourceTime.DateTime;
+
+            event1.Title = tile.Text;
+            event1.BasePrice = Int32.Parse(bid.Text);
+
+
+            InsertEvent(event1);
+
+            
+
+
+
+
+
+
         }
     }
 }

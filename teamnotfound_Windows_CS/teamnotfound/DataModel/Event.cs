@@ -19,7 +19,7 @@ namespace teamnotfound.DataModel
         [JsonProperty(PropertyName = "base_price")]
         public int BasePrice { get; set; }
         [JsonProperty(PropertyName = "location")]
-        public int Location { get; set; }
+        public string Location { get; set; }
         [JsonProperty(PropertyName = "closeDate")]
         public  DateTime CloseDate { get; set; }
     }

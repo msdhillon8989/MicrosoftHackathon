@@ -45,7 +45,13 @@
         		<Run Text="Location"/>
         		<Run Foreground="Red" Text="*"/>
             </TextBlock>
-            <ComboBox x:Name="location" HorizontalAlignment="Stretch" Margin="10,10,10,0"  VerticalAlignment="Top"   ></ComboBox>
+            <ComboBox x:Name="location" HorizontalAlignment="Stretch" Margin="10,10,10,0"  VerticalAlignment="Top"   >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate x:DataType="data:Country" >
+                        <TextBlock Text="{Binding CountryName}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
             <TextBlock x:Name="BidEndDateText" Foreground="#FF060656" HorizontalAlignment="Left" Margin="10,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" >
         		<Run Text="Bid End Date"/>
         		<Run Foreground="Red" Text="*"/>

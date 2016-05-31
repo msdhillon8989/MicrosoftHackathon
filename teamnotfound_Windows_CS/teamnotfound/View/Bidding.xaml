@@ -9,21 +9,21 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="Bid for an Event" HorizontalAlignment="center" FontSize="30" Margin="50" FontWeight="Bold"></TextBlock>
+        <TextBlock Text="Bid for an Event" HorizontalAlignment="center" FontSize="30" Margin="50" FontWeight="Bold"> </TextBlock>
 
 
-        <StackPanel HorizontalAlignment="Center">
+        <StackPanel HorizontalAlignment="Center" >
             <TextBlock HorizontalAlignment="Left" Margin="10,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200">
         	                <Run Text="Event Title"/>
-            </TextBlock>
-            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200">
+            </TextBlock> 
+            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0"  VerticalAlignment="Top" Width="200">
         	                <Run Text="Event Title"/>
             </TextBlock>
             <TextBlock HorizontalAlignment="Left" Margin="10,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200">
         	                <Run Text="Countries"/>
             </TextBlock>
 
-            
+
             <ComboBox x:Name="type" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="340">
                 <ComboBox.ItemTemplate>
                     <DataTemplate x:DataType="data:Country" >
