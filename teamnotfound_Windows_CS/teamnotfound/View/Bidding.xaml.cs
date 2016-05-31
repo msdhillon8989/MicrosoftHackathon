@@ -30,14 +30,13 @@ namespace teamnotfound
         private MobileServiceCollection<Country, Country> items;
         private IMobileServiceTable<Bid> bidTable = App.MobileService.GetTable<Bid>();
         private MobileServiceCollection<Bid, Bid> bids;
-        private IMobileServiceTable<Key> keyTable = App.MobileService.GetTable<Bid>();
-        private MobileServiceCollection<Bid, Bid> bids;
+        private IMobileServiceTable<admin_key> keyTable = App.MobileService.GetTable<admin_key>();
+       
         List<Country> country = new List<Country>();
         List<Bid> bid = new List<Bid>();
         int i = 1;
         List<String> parameter;
-        private Task keyTable;
-
+        
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             //parameter = e.Parameter as List<String>;

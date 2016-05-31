@@ -112,11 +112,11 @@ namespace teamnotfound.View
             if (user != null)
             {
                 await GetProfileImage(user.Email);
-                FirstNameTextBlock.Text = user.Fname;
-                LastNameTextBlock.Text = user.Lname;
+               // FirstNameTextBlock.Text = user.Fname;
+                //LastNameTextBlock.Text = user.Lname;
                 EmailTextBlock.Text = user.Email;
-                MobileTextBlock.Text = user.Mobile;
-                SummaryTextBox.Text = user.Summary;
+                //MobileTextBlock.Text = user.Mobile;
+                //SummaryTextBox.Text = user.Summary;
                 string serialized = JsonConvert.SerializeObject(user);
                 Global.SetRepositoryValue("userProfile",serialized);
 

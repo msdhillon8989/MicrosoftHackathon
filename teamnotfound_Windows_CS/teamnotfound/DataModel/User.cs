@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeamNotFound.Models
+namespace teamnotfound.DataModel
 {
     class User
     {

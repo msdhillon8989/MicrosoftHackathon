@@ -56,11 +56,12 @@ namespace teamnotfound.View
                 var userRes = await usertable.Where(usr => usr.Email == userName).ToEnumerableAsync();
                  user = userRes.SingleOrDefault();
             }
-            FirstNameTextBox.Text = user.Fname;
-            LastNameTextBox.Text = user.Lname;
+           // FirstNameTextBox.Text = user.Fname;
+           // LastNameTextBox.Text = user.Lname;
             EmailTextBox.Text = user.Email;
-            MobileTextBox.Text = user.Mobile;
-            SummaryTextBox.Text = user.Summary;
+            //MobileTextBox.Text = user.Mobile;
+            //SummaryTextBox.Text = user.Summary;
+            FirstNameTextBox.Text = user.Name;
             StorageFolder folder = ApplicationData.Current.LocalFolder;
             StorageFile file = null;
             try
@@ -164,10 +165,10 @@ namespace teamnotfound.View
         private async void NextButton_Click(object sender, RoutedEventArgs e)
         {
             User user = new User();
-            user.Fname = FirstNameTextBox.Text;
-            user.Lname = LastNameTextBox.Text;
-            user.Mobile = MobileTextBox.Text;
-            user.Summary = SummaryTextBox.Text;
+            //user.Fname = FirstNameTextBox.Text;
+            //user.Lname = LastNameTextBox.Text;
+            //user.Mobile = MobileTextBox.Text;
+            //user.Summary = SummaryTextBox.Text;
             user.Email = EmailTextBox.Text;
             try
             {
