@@ -37,6 +37,8 @@ namespace teamnotfound.View
             PassportStatusText.Text = "";
         }
         private IMobileServiceTable<UserCred> userCredtable = App.MobileService.GetTable<UserCred>();
+        private IMobileServiceTable<User> userTable = App.MobileService.GetTable<User>();
+
         private bool DoUserValidation(string user)
         {
 
@@ -72,9 +74,19 @@ namespace teamnotfound.View
             if (pass == password)
             {
                 PassportStatusText.Text = "Account Login Successful";
+                var user = await userTable.Where(User => User.Email == userName).ToCollectionAsync<User>();
+
+                if(user.ElementAt(0).UserType=="Admin")
+                {
+                    Frame.Navigate(typeof(DashboardAdmin));
+                }
+                else
+                {
+                    Frame.Navigate(typeof(DashBoard));
+                }
 
                 Global.SetRepositoryValue("userName", userName);
-                Frame.Navigate(typeof(DashBoard));
+                
             }
             else
             {
