@@ -13,13 +13,14 @@ namespace teamnotfound.DataModel
 
     {
         public string Id { get; set; }
-        [JsonProperty(PropertyName = "project_id")]
-        public string ProjectId { set; get; }
+        [JsonProperty(PropertyName = "eventId")]
+        public string EventId { set; get; }
         [JsonProperty(PropertyName = "bidder")]
         public string Bidder { set; get; }
         [JsonProperty(PropertyName = "bidd_amt")]
         public int BiddAmt { set; get; }
-        [JsonProperty(PropertyName = "TimePeriod")]
-        public int TimePeriod { get; set; }
+        [JsonProperty(PropertyName = "country")]
+        public int Countr { get; set; }
+
     }
 }

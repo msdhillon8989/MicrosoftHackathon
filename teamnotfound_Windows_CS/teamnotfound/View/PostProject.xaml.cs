@@ -82,6 +82,8 @@ namespace teamnotfound.View
             event1.Title = tile.Text;
             event1.BasePrice = Int32.Parse(bid.Text);
 
+            event1.Status = "Bidding";
+
 
             InsertEvent(event1);
 

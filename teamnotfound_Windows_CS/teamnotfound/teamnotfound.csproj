@@ -104,6 +104,7 @@
     <Compile Include="DataModel\Category.cs" />
     <Compile Include="DataModel\Country.cs" />
     <Compile Include="DataModel\Event.cs" />
+    <Compile Include="DataModel\EventBidCount.cs" />
     <Compile Include="DataModel\Project.cs" />
     <Compile Include="DataModel\ProjectCount.cs" />
     <Compile Include="DataModel\Skills.cs" />

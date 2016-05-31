@@ -21,6 +21,9 @@ namespace teamnotfound.DataModel
         [JsonProperty(PropertyName = "location")]
         public string Location { get; set; }
         [JsonProperty(PropertyName = "closeDate")]
-        public  DateTime CloseDate { get; set; }
+        public DateTime CloseDate { get; set; }
+        [JsonProperty(PropertyName = "status")]
+        public string Status { get; set; }
+
     }
 }

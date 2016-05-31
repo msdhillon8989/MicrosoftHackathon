@@ -32,11 +32,11 @@ namespace teamnotfound.View
             getProjects();
         }
 
-        private IMobileServiceTable<Project> projectTable = App.MobileService.GetTable<Project>();
+        private IMobileServiceTable<Event> eventTable = App.MobileService.GetTable<Event>();
         private IMobileServiceTable<Bid> bidTable = App.MobileService.GetTable<Bid>();
-        private MobileServiceCollection<Project, Project> items;
+        private MobileServiceCollection<Event, Event> items;
         private MobileServiceCollection<Bid, Bid> bids;
-        private List<ProjectCount> projectCount = new List<ProjectCount>();
+        private List<EventBidCount> eventCount = new List<EventBidCount>();
 
         //   private MobileServiceCollection<, Project> items;
 
@@ -47,19 +47,19 @@ namespace teamnotfound.View
         {
 
 
-            items = await projectTable .Where(Project => Project.Owner == Global.GetRepositoryValue("userName").ToString()).ToCollectionAsync();
+            items = await eventTable .Where(Event => Event.Status=="Bidding").ToCollectionAsync();
              
            
-                foreach (var project in items)
+            foreach (var _event in items)
             {
                 
                
-                Debug.Write(project.Id);
-                bids = await bidTable.Where(Bid => Bid.ProjectId == project.Id.ToString()).ToCollectionAsync();
+                Debug.Write(_event.Id);
+                bids = await bidTable.Where(Bid => Bid.EventId == _event.Id.ToString()).ToCollectionAsync();
 
                 Debug.Write("    count "+bids.Count+"    ");
-                var count = new ProjectCount { Project = project, BidCount = (int)bids.Count, Bids = bids.ToList() };
-                projectCount.Add(count);
+                var count = new EventBidCount { Event = _event, BidCount = (int)bids.Count};
+                eventCount.Add(count);
             }
             //gridView.ItemsSource = items;
           //  Global.SetRepositoryValue("MyPost", projectCount);
