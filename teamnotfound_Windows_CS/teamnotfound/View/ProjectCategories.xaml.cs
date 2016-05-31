@@ -73,7 +73,7 @@ namespace teamnotfound
             string text=((sender as StackPanel).FindName("categoryName") as TextBlock).Text;
             Debug.Write("Text: " + text);
             //search.Text = text;
-            Frame.Navigate(typeof(SearchProject),text);
+            //Frame.Navigate(typeof(SearchProject),text);
         }
     }
 }

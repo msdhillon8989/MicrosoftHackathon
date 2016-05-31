@@ -1,0 +1,100 @@
+﻿<Page
+    x:Class="teamnotfound.View.SearchEvent"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:teamnotfound.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:teamnotfound.DataModel"
+    mc:Ignorable="d">
+
+
+    <Grid Background="Gray">
+        <StackPanel VerticalAlignment="Top" Margin="0,0,0,0" Background="#FF060656" >
+            <TextBlock x:Name="Hello"  HorizontalAlignment="Center"   Style="{StaticResource HeaderTextBlockStyle}" TextWrapping="Wrap" Text="Events" Height="75" SelectionHighlightColor="#FF334676"  Foreground="Gray" />
+        </StackPanel>
+
+        <StackPanel Background="#FFdddddd"   Margin="10,90,10,10">
+
+            <StackPanel Orientation="Vertical"  Padding="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" >
+
+                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Stretch" VerticalAlignment="Top"   >
+                    <TextBlock FontSize="12" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Title : " ></TextBlock>
+                    <TextBlock FontSize="12"  Foreground="Gray" VerticalAlignment="Bottom" Text="India vs Pakistan" ></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
+
+                    <StackPanel Orientation="Vertical"   HorizontalAlignment="Left" VerticalAlignment="Top" >
+
+                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
+                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Base Price : " ></TextBlock>
+                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="890" ></TextBlock>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
+                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Bid Close Date : " ></TextBlock>
+                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="23-June-2016" ></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="90,0,0,0"  HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
+
+                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"  >
+                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Bids : " ></TextBlock>
+                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="5" ></TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   >
+                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="Status : " ></TextBlock>
+                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="Bidding" ></TextBlock>
+                        </StackPanel>
+
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Orientation="Vertical"  Padding="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" >
+
+                <StackPanel Orientation="Horizontal"  HorizontalAlignment="Stretch" VerticalAlignment="Top"   >
+                    <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Title : " ></TextBlock>
+                    <TextBlock FontSize="12"  Foreground="Gray" VerticalAlignment="Bottom" Text="India vs South Africa" ></TextBlock>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"   >
+
+                    <StackPanel Orientation="Vertical"   HorizontalAlignment="Left" VerticalAlignment="Top"   >
+
+                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
+                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="Base Price : " ></TextBlock>
+                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="230" ></TextBlock>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"   >
+                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="Bid Close Date : " ></TextBlock>
+                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="23-June-2016" ></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="90,0,0,0"  HorizontalAlignment="Stretch" VerticalAlignment="Top"   >
+
+                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   >
+                            <TextBlock FontSize="10" FontWeight="Bold"  Foreground="Gray" VerticalAlignment="Bottom" Text="Bids : " ></TextBlock>
+                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="5" ></TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   >
+                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="Status : " ></TextBlock>
+                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="Bidding" ></TextBlock>
+                        </StackPanel>
+
+                    </StackPanel>
+                </StackPanel>
+
+
+
+
+
+            </StackPanel>
+
+        </StackPanel>
+
+
+
+
+    </Grid>
+</Page>
