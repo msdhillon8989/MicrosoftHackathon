@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace teamnotfound.DataModel
 {
-    public  class EventBidCount
+    public class EventBidCount
     {
-       public Event Event { get; set; }
-       public int BidCount { get; set; }
+        public Event Event { get; set; }
+        public int BidCount { get; set; }
+
     }
 }
