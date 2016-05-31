@@ -22,14 +22,14 @@
                             <TextBlock Text="My Profile" FontSize="18" VerticalAlignment="Center" Margin="8,0,7,0" />
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Tapped="MyProject_Tapped">
+                    <ListViewItem Tapped="Search_Tapped">
                         <StackPanel Orientation="Horizontal" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False">
                             <Image Width="45" Height="45" Source="ms-appx:///Assets/Square44x44Logo.png"
                    Stretch="UniformToFill" Margin="-2,0,0,0" />
                             <TextBlock Text="Search Events" FontSize="18" VerticalAlignment="Center" Margin="6,0,0,0" />
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem Tapped="PostProject_Tapped" >
+                    <ListViewItem Tapped="MyEvents_Tapped" >
                         <StackPanel Orientation="Horizontal">
                             <Image Width="45" Height="45" Source="ms-appx:///Assets/Square44x44Logo.png"
                         Stretch="UniformToFill" Margin="-2,0,0,0" />
@@ -42,8 +42,15 @@
         </SplitView.Pane>
         <SplitView.Content>
             <!-- -->
-            <Frame Name="myFrame"></Frame>
+            <Frame Name="myFrame">
+                
+            </Frame>
         </SplitView.Content>
     </SplitView>
-
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="PlayPauseButton" Tag="Logout" Label="Logout" FontSize="16" Click="Logout_Tapped"/>
+            
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>

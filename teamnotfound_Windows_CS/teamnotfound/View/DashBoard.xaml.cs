@@ -43,12 +43,12 @@ namespace teamnotfound.View
             MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
         }
 
-        private void PostProject_Tapped(object sender, TappedRoutedEventArgs e)
+        private void MyEvents_Tapped(object sender, TappedRoutedEventArgs e)
         {
            MySplitView.IsPaneOpen = false;
-            myFrame.Navigate(typeof(PostProject));
+           myFrame.Navigate(typeof(MyProjects));
         }
-        private void MyProject_Tapped(object sender, TappedRoutedEventArgs e)
+        private void Search_Tapped(object sender, TappedRoutedEventArgs e)
         {
            MySplitView.IsPaneOpen = false;
            myFrame.Navigate(typeof(SearchProject));
@@ -58,6 +58,14 @@ namespace teamnotfound.View
             MySplitView.IsPaneOpen = false;
             //Load the custom page
            myFrame.Navigate(typeof(Profile));
+        }
+        private void Logout_Tapped(object sender, RoutedEventArgs e)
+        {
+            //MySplitView.IsPaneOpen = false;
+            //Load the custom page
+            Frame.Navigate(typeof(Login));
+            
+            Global.SetRepositoryValue("userName", "");
         }
     }
 }
