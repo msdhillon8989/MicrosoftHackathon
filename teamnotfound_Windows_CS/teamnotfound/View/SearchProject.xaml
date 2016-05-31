@@ -12,17 +12,17 @@
         <TextBlock Text="EVENTS" HorizontalAlignment="center" FontSize="30" Margin="50" FontWeight="Bold"></TextBlock>
         <ListView Name="gridView" Margin="63,97,63,-76" IsItemClickEnabled="False">
             <ListView.ItemTemplate>
-                <DataTemplate  x:DataType="data:Event">
-                    <StackPanel HorizontalAlignment="Center" Background="DimGray" Tapped="Event_Tapped">
+                <DataTemplate>
+                    <StackPanel HorizontalAlignment="Center" Background="DimGray">
                         <TextBlock x:Name="eventId" FontSize="10" Text="" Visibility="Collapsed"></TextBlock>
                         <TextBlock FontSize="16" Text="Title: "></TextBlock>
-                        <TextBlock FontSize="16" Text="{x:Bind Event.Title}"></TextBlock>
+                        <TextBlock FontSize="16" Text=""></TextBlock>
 
                         <TextBlock FontSize="16" Text="Base Price: "></TextBlock>
-                        <TextBlock FontSize="16" Text="{x:Bind Event.BasePrice}"></TextBlock>
+                        <TextBlock FontSize="16" Text=""></TextBlock>
 
                         <TextBlock FontSize="16" Text="Bidding closes on: "></TextBlock>
-                        <TextBlock FontSize="16" Text="{x:Bind Event.CloseDate}"></TextBlock>
+                        <TextBlock FontSize="16" Text=""></TextBlock>
                         <TextBlock FontSize="10" Text=""></TextBlock>
                         <TextBlock FontSize="10" Text=""></TextBlock>
                         <TextBlock FontSize="10" Text=""></TextBlock>
