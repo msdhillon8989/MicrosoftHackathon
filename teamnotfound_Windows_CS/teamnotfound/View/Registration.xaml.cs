@@ -13,8 +13,6 @@ using System.Threading.Tasks;
 using teamnotfound;
 using teamnotfound.Common;
 using teamnotfound.DataModel;
-using TeamNotFound.Models;
-using TeamNotFound.View;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
@@ -42,25 +40,13 @@ namespace teamnotfound.View
         //Fetch the blob storage
          private IMobileServiceTable<User> usertable = App.MobileService.GetTable<User>();
         private IMobileServiceTable<UserCred> userCredtable = App.MobileService.GetTable<UserCred>();
-
-        public Registration()
+        private IMobileServiceTable<admin_key> keyTable = App.MobileService.GetTable<admin_key> ();
+       public Registration()
         {
             this.InitializeComponent();
-           
-
-
         }
        
-        
-
-
       
-
-
-
-
-
-
         private async Task InsertUserCred(UserCred userCred)
         {
            await userCredtable.InsertAsync(userCred);
@@ -69,7 +55,7 @@ namespace teamnotfound.View
         {
             await usertable.InsertAsync(user);
         }
-        private async void ButtonRegister_Click(object sender, RoutedEventArgs e)
+        /*private async void ButtonRegister_Click(object sender, RoutedEventArgs e)
         {
             User user = new User();
             UserCred userCred = new UserCred();
@@ -93,7 +79,7 @@ namespace teamnotfound.View
                 Frame.Navigate(typeof(AddSkill));
             }
             
-        }
+        }*/
 
        
 
@@ -115,15 +101,38 @@ namespace teamnotfound.View
         {
             User user = new User();
             UserCred userCred = new UserCred();
-            user.Fname = name.Text;
-            /* string temp;
-            SummaryTextBox.Document.GetText(TextGetOptions.None, out temp);
-            var range = SummaryTextBox.Document.GetRange(0, temp.Length - 1);
-            user.Summary = range.Text;*/
+            user.Name = name.Text;
             user.Email = EmailTextBox.Text;
             userCred.UserName = user.Email;
             userCred.Password = PasswordTextBox.Password;
-            var userNameList = await usertable.Where(usr => usr.Email == user.Email).ToListAsync();
+            ComboBoxItem item = comboBox.SelectedItem as ComboBoxItem;
+            string userType = item.Content.ToString();
+            if (userType == "Admin")
+            {
+                var keyValue = AdminKeyTextBox.Text;
+                var keyList = await keyTable
+                                    .Where(admin_key => admin_key.Key == keyValue)
+                                    .ToListAsync();
+                if (keyList.Count == 0)
+                {
+                    var dialog = new MessageDialog("Admin Key is incorrect.");
+                    dialog.Title = "Alert";
+                    dialog.Commands.Add(new UICommand("Ok") { Id = 1 });
+                    var result = await dialog.ShowAsync();
+                }
+                else
+                {
+                    user.UserType = "Admin";
+                }
+
+            }
+            else if (userType == "User")
+            {
+                user.UserType = "Üser";
+            }
+            var userNameList = await usertable
+                                    .Where(usr => usr.Email == user.Email)
+                                    .ToListAsync();
             if (userNameList.Count !=0)
             {
                 var dialog = new MessageDialog("User is already present");
@@ -175,7 +184,6 @@ namespace teamnotfound.View
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // string userType= (sender as ComboBox).SelectedItem as string;
             ComboBoxItem item = comboBox.SelectedItem as ComboBoxItem;
             string userType = item.Content.ToString();
             Debug.Write("User type: " + userType);
@@ -186,6 +194,7 @@ namespace teamnotfound.View
             else if (userType == "User")
             {
                 AdminKey.Visibility = Visibility.Collapsed;
+                AdminKeyErrorTextBox.Visibility = Visibility.Collapsed;
             }
         }
 

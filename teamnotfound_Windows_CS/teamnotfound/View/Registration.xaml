@@ -53,9 +53,9 @@
              </ComboBox>
 
             <StackPanel Visibility="Collapsed" x:Name="AdminKey" Orientation="Vertical"  >
-                
-                <TextBox Header="Admin Key" x:Name="AdminKeyTextBox" Margin="10,5,10,0" TextWrapping="Wrap" Text=""   VerticalAlignment="Top"  HorizontalAlignment="Stretch"   LostFocus="KeyTextBox_LostFocus"/>
-                <TextBlock x:Name="AdminKeyErrorTextBox" Foreground="Red" Text=""  LostFocus="AdminKeyErrorTextBox_LostFocus" HorizontalAlignment="Stretch"></TextBlock>
+
+                <TextBox Header="Admin Key" x:Name="AdminKeyTextBox" Margin="10,5,10,0" TextWrapping="Wrap" Text=""   VerticalAlignment="Top"  HorizontalAlignment="Stretch"   LostFocus="AdminKeyErrorTextBox_LostFocus"/>
+                <TextBlock x:Name="AdminKeyErrorTextBox" Foreground="Red" Text=""  HorizontalAlignment="Stretch"></TextBlock>
             </StackPanel>
 
 

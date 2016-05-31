@@ -30,10 +30,14 @@ namespace teamnotfound
         private MobileServiceCollection<Country, Country> items;
         private IMobileServiceTable<Bid> bidTable = App.MobileService.GetTable<Bid>();
         private MobileServiceCollection<Bid, Bid> bids;
+        private IMobileServiceTable<Key> keyTable = App.MobileService.GetTable<Bid>();
+        private MobileServiceCollection<Bid, Bid> bids;
         List<Country> country = new List<Country>();
         List<Bid> bid = new List<Bid>();
         int i = 1;
         List<String> parameter;
+        private Task keyTable;
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             //parameter = e.Parameter as List<String>;
@@ -47,22 +51,22 @@ namespace teamnotfound
         {
             this.InitializeComponent();
         }
-        /*private async void createCountry()
+        private async void createCountry()
         {
-            var count = new Country {Id="1234" ,CountryName="Australia"};
+            var count = new admin_key {Id="a1b2c3d4" ,Key="qazwsxed1234"};
             await InsertCountry(count);
             
 
         }
-        private async Task InsertCountry(Country count)
+        private async Task InsertCountry(admin_key count)
         {
             // This code inserts a new TodoItem into the database. When the operation completes
             // and Mobile Apps has assigned an Id, the item is added to the CollectionView
-            await countryTable.InsertAsync(count);
+            await keyTable.InsertAsync(count);
 
 
             //await App.MobileService.SyncContext.PushAsync(); // offline sync
-        }*/
+        }
         private async void getCountry()
         {
             items = await countryTable

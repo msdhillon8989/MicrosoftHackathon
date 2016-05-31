@@ -16,29 +16,17 @@ namespace TeamNotFound.Models
             get { return id; }
             set { id = value; }
         }
-        private string fname;
-        [JsonProperty(PropertyName = "Fname")]
-        public string Fname
+        
+
+        private string name;
+        [JsonProperty(PropertyName = "name")]
+        public string Name
         {
-            get { return fname; }
-            set { fname = value; }
+            get { return name; }
+            set { name = value; }
         }
 
-        private string lname;
-        [JsonProperty(PropertyName = "Lname")]
-        public string Lname
-        {
-            get { return lname; }
-            set { lname = value; }
-        }
-
-        private string mobile;
-        [JsonProperty(PropertyName = "Mobile")]
-        public string Mobile
-        {
-            get { return mobile; }
-            set { mobile = value; }
-        }
+        
         private string email;
         [JsonProperty(PropertyName = "Email")]
         public string Email
@@ -46,22 +34,23 @@ namespace TeamNotFound.Models
             get { return email; }
             set { email = value; }
         }
-        private string summmary;
-        [JsonProperty(PropertyName = "Summary")]
-        public string Summary
+
+        private string userType;
+        [JsonProperty(PropertyName = "userType")]
+        public string UserType
         {
-            get { return summmary; }
-            set { summmary = value; }
+            get { return userType; }
+            set { userType = value; }
         }
-       
-       /* [JsonProperty(PropertyName = "Image")]
-        private byte[] image;
-        public byte[] Image
-        {
-            get { return image; }
-            set { image = value; }
-        }
-        */
+
+        /* [JsonProperty(PropertyName = "Image")]
+         private byte[] image;
+         public byte[] Image
+         {
+             get { return image; }
+             set { image = value; }
+         }
+         */
 
     }
 }

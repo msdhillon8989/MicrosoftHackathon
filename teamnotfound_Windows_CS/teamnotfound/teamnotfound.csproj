@@ -99,6 +99,7 @@
     <Compile Include="Common\QuickStartTask.xaml.cs">
       <DependentUpon>QuickStartTask.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataModel\admin_key.cs" />
     <Compile Include="DataModel\Bid.cs" />
     <Compile Include="DataModel\Category.cs" />
     <Compile Include="DataModel\Country.cs" />

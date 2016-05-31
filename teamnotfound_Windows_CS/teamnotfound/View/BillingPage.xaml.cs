@@ -48,7 +48,7 @@ namespace teamnotfound.View
         {
             var mycust = new StripeCustomerCreateOptions();
             SourceCard card = new SourceCard();
-            card.Number = card1.Text + card2.Text + card3.Text + card4.Text; ;
+            card.Number = card1.Text + card2.Text + card3.Text + card4.Text;
             card.Name = nameOnCard.Text;
             card.ExpirationMonth = month.Text;
             card.ExpirationYear = year.Text;
