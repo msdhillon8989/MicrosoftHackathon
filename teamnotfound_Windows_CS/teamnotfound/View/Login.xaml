@@ -21,24 +21,25 @@
         		<Run Foreground="Red" Text="*"/>
             </TextBlock>
             <TextBox x:Name="UsernameTextBox" HorizontalAlignment="Stretch" Margin="10,10,10,0"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
+            <TextBlock x:Name="ErrorTextBox" Visibility="Collapsed" Foreground="#FF060656" HorizontalAlignment="Left"  Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" />
 
 
-          
+
             <TextBlock Foreground="#FF060656" x:Name="textBlock_Copy1" HorizontalAlignment="Left" Margin="10,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
         		<Run Text="Password"/>
         		<Run Foreground="Red" Text="*"/>
             </TextBlock>
-            <TextBox x:Name="PasswordTextBox"  HorizontalAlignment="Stretch" Margin="10,10,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"    InputScope="Password"/>
+            <PasswordBox x:Name="PasswordTextBox"  HorizontalAlignment="Stretch" Margin="10,10,10,0"  VerticalAlignment="Top"   />
             <TextBlock Foreground="#FF060656" x:Name="PassportStatusText" Visibility="Collapsed" HorizontalAlignment="Left" Margin="10,3,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
             <CheckBox Foreground="#FF060656" Content="Remember me" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" ></CheckBox>
-                
-            <Button x:Name="button" FontWeight="Bold" Foreground="gray" FontSize="20" Background="#FF060656" Content="Login" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="245" Click="button_Click"/>
+
+            <Button x:Name="loginbutton" FontWeight="Bold" Foreground="gray" FontSize="20" Background="#FF060656" Content="Login" HorizontalAlignment="Center" Margin="0,10,0,0" Click="PassportSignInButton_Click" VerticalAlignment="Top" Width="245" />
             <TextBlock Foreground="#FF060656" Text="New User ?" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top"/>
 
 
-            <Button x:Name="button1" FontWeight="Bold" Foreground="gray" FontSize="20" Background="#FF060656" Content="Register" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="245" Click="button_Click"/>
-            
+            <Button x:Name="button1" FontWeight="Bold" Foreground="gray" FontSize="20" Background="#FF060656" Content="Register" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="245"/>
+
         </StackPanel>
     </Grid>
 </Page>

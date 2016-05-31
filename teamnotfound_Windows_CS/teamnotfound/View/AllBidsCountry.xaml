@@ -18,25 +18,25 @@
 
         <StackPanel Background="#FFdddddd"   Margin="10,90,10,10">
 
-            <StackPanel Orientation="Vertical"  Padding="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" Tapped="StackPanel_Tapped">
+            <StackPanel Orientation="Vertical"  Padding="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" >
           
-                <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"   Tapped="StackPanel_Tapped">
+                <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"   >
 
-                    <StackPanel Orientation="Vertical"   HorizontalAlignment="Left" VerticalAlignment="Top"   Tapped="StackPanel_Tapped">
+                    <StackPanel Orientation="Vertical"   HorizontalAlignment="Left" VerticalAlignment="Top"   >
 
-                        <StackPanel Orientation="Horizontal"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"    Tapped="StackPanel_Tapped">
-                            <TextBlock  Width="150" FontSize="20" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Tapped="TextBlock_Tapped" Text="India" ></TextBlock>
+                        <StackPanel Orientation="Horizontal"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   >
+                            <TextBlock  Width="150" FontSize="20" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="India" ></TextBlock>
                         </StackPanel>
 
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Margin="80,0,0,0"  HorizontalAlignment="Stretch" VerticalAlignment="Top"   Tapped="StackPanel_Tapped">
+                    <StackPanel Orientation="Vertical" Margin="80,0,0,0"  HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
 
-                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   Tapped="StackPanel_Tapped">
-                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Tapped="TextBlock_Tapped" Text="Bids : " ></TextBlock>
+                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   >
+                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Bids : " ></TextBlock>
                             <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="3" ></TextBlock>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   Tapped="StackPanel_Tapped">
-                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Tapped="TextBlock_Tapped" Text="Status : " ></TextBlock>
+                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"  >
+                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Status : " ></TextBlock>
                             <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="Bidding" ></TextBlock>
                         </StackPanel>
 
@@ -51,25 +51,25 @@
 
 
 
-            <StackPanel Orientation="Vertical"  Padding="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" Tapped="StackPanel_Tapped">
+            <StackPanel Orientation="Vertical"  Padding="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" >
 
-                <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"   Tapped="StackPanel_Tapped">
+                <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"   >
 
-                    <StackPanel Orientation="Vertical"   HorizontalAlignment="Left" VerticalAlignment="Top"   Tapped="StackPanel_Tapped">
+                    <StackPanel Orientation="Vertical"   HorizontalAlignment="Left" VerticalAlignment="Top"  >
 
-                        <StackPanel Orientation="Horizontal"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"    Tapped="StackPanel_Tapped">
-                            <TextBlock FontSize="20" Width="150"  FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Tapped="TextBlock_Tapped" Text="China" ></TextBlock>
+                        <StackPanel Orientation="Horizontal"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   >
+                            <TextBlock FontSize="20" Width="150"  FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="China" ></TextBlock>
                         </StackPanel>
 
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Margin="80,0,0,0"  HorizontalAlignment="Stretch" VerticalAlignment="Top"   Tapped="StackPanel_Tapped">
+                    <StackPanel Orientation="Vertical" Margin="80,0,0,0"  HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
 
-                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   Tapped="StackPanel_Tapped">
-                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Tapped="TextBlock_Tapped" Text="Bids : " ></TextBlock>
+                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   >
+                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Bids : " ></TextBlock>
                             <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="5" ></TextBlock>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   Tapped="StackPanel_Tapped">
-                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Tapped="TextBlock_Tapped" Text="Status : " ></TextBlock>
+                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"  >
+                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="Status : " ></TextBlock>
                             <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="Bidding" ></TextBlock>
                         </StackPanel>
 

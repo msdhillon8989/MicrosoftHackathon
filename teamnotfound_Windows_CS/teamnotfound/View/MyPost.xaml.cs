@@ -67,7 +67,9 @@ namespace teamnotfound.View
 
         }
 
-     
-      
+        private void StackPanel_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
+        }
     }
 }
