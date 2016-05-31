@@ -36,9 +36,9 @@ namespace teamnotfound
         public MyProjects()
         {
             this.InitializeComponent();
-            getBids();
+            //getBids();
         }
-        private async void getBids()
+       /* private async void getBids()
         {
             // Bidder must come from global.cs
             bid = await bidTable
@@ -93,7 +93,7 @@ namespace teamnotfound
                 //Frame.Navigate(typeof(ProjectCategories));
             }
 
-        }
+        }*/
 
     }
 }

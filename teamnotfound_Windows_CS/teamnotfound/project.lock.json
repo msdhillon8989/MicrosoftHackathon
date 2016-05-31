@@ -395,6 +395,15 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "modernhttpclient/2.4.2": {
+        "type": "package",
+        "compile": {
+          "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
+        },
+        "runtime": {
+          "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
+        }
+      },
       "Newtonsoft.Json/8.0.3": {
         "type": "package",
         "compile": {
@@ -402,6 +411,22 @@
         },
         "runtime": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Stripe.net/6.3.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl": "1.1.10",
+          "Microsoft.Bcl.Build": "1.0.21",
+          "Microsoft.Net.Http": "2.2.29",
+          "Newtonsoft.Json": "8.0.3",
+          "modernhttpclient": "2.4.2"
+        },
+        "compile": {
+          "lib/dotnet/Stripe.net.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/Stripe.net.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -2059,6 +2084,15 @@
           }
         }
       },
+      "WindowsAzure.Messaging.Managed/0.1.7.9": {
+        "type": "package",
+        "compile": {
+          "lib/netcore45/Microsoft.WindowsAzure.Messaging.Managed.dll": {}
+        },
+        "runtime": {
+          "lib/netcore45/Microsoft.WindowsAzure.Messaging.Managed.dll": {}
+        }
+      },
       "WindowsAzure.Storage/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -2463,6 +2497,15 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "modernhttpclient/2.4.2": {
+        "type": "package",
+        "compile": {
+          "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
+        },
+        "runtime": {
+          "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
+        }
+      },
       "Newtonsoft.Json/8.0.3": {
         "type": "package",
         "compile": {
@@ -2470,6 +2513,22 @@
         },
         "runtime": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Stripe.net/6.3.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl": "1.1.10",
+          "Microsoft.Bcl.Build": "1.0.21",
+          "Microsoft.Net.Http": "2.2.29",
+          "Newtonsoft.Json": "8.0.3",
+          "modernhttpclient": "2.4.2"
+        },
+        "compile": {
+          "lib/dotnet/Stripe.net.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/Stripe.net.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -3991,6 +4050,15 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "WindowsAzure.Messaging.Managed/0.1.7.9": {
+        "type": "package",
+        "compile": {
+          "lib/netcore45/Microsoft.WindowsAzure.Messaging.Managed.dll": {}
+        },
+        "runtime": {
+          "lib/netcore45/Microsoft.WindowsAzure.Messaging.Managed.dll": {}
+        }
+      },
       "WindowsAzure.Storage/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -4381,6 +4449,15 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "modernhttpclient/2.4.2": {
+        "type": "package",
+        "compile": {
+          "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
+        },
+        "runtime": {
+          "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
+        }
+      },
       "Newtonsoft.Json/8.0.3": {
         "type": "package",
         "compile": {
@@ -4388,6 +4465,22 @@
         },
         "runtime": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Stripe.net/6.3.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl": "1.1.10",
+          "Microsoft.Bcl.Build": "1.0.21",
+          "Microsoft.Net.Http": "2.2.29",
+          "Newtonsoft.Json": "8.0.3",
+          "modernhttpclient": "2.4.2"
+        },
+        "compile": {
+          "lib/dotnet/Stripe.net.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/Stripe.net.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -5884,6 +5977,15 @@
         },
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "WindowsAzure.Messaging.Managed/0.1.7.9": {
+        "type": "package",
+        "compile": {
+          "lib/netcore45/Microsoft.WindowsAzure.Messaging.Managed.dll": {}
+        },
+        "runtime": {
+          "lib/netcore45/Microsoft.WindowsAzure.Messaging.Managed.dll": {}
         }
       },
       "WindowsAzure.Storage/7.0.0": {
@@ -6297,6 +6399,15 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "modernhttpclient/2.4.2": {
+        "type": "package",
+        "compile": {
+          "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
+        },
+        "runtime": {
+          "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
+        }
+      },
       "Newtonsoft.Json/8.0.3": {
         "type": "package",
         "compile": {
@@ -6304,6 +6415,22 @@
         },
         "runtime": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Stripe.net/6.3.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl": "1.1.10",
+          "Microsoft.Bcl.Build": "1.0.21",
+          "Microsoft.Net.Http": "2.2.29",
+          "Newtonsoft.Json": "8.0.3",
+          "modernhttpclient": "2.4.2"
+        },
+        "compile": {
+          "lib/dotnet/Stripe.net.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/Stripe.net.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -7825,6 +7952,15 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "WindowsAzure.Messaging.Managed/0.1.7.9": {
+        "type": "package",
+        "compile": {
+          "lib/netcore45/Microsoft.WindowsAzure.Messaging.Managed.dll": {}
+        },
+        "runtime": {
+          "lib/netcore45/Microsoft.WindowsAzure.Messaging.Managed.dll": {}
+        }
+      },
       "WindowsAzure.Storage/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -8215,6 +8351,15 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "modernhttpclient/2.4.2": {
+        "type": "package",
+        "compile": {
+          "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
+        },
+        "runtime": {
+          "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
+        }
+      },
       "Newtonsoft.Json/8.0.3": {
         "type": "package",
         "compile": {
@@ -8222,6 +8367,22 @@
         },
         "runtime": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Stripe.net/6.3.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl": "1.1.10",
+          "Microsoft.Bcl.Build": "1.0.21",
+          "Microsoft.Net.Http": "2.2.29",
+          "Newtonsoft.Json": "8.0.3",
+          "modernhttpclient": "2.4.2"
+        },
+        "compile": {
+          "lib/dotnet/Stripe.net.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/Stripe.net.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -9718,6 +9879,15 @@
         },
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "WindowsAzure.Messaging.Managed/0.1.7.9": {
+        "type": "package",
+        "compile": {
+          "lib/netcore45/Microsoft.WindowsAzure.Messaging.Managed.dll": {}
+        },
+        "runtime": {
+          "lib/netcore45/Microsoft.WindowsAzure.Messaging.Managed.dll": {}
         }
       },
       "WindowsAzure.Storage/7.0.0": {
@@ -10131,6 +10301,15 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "modernhttpclient/2.4.2": {
+        "type": "package",
+        "compile": {
+          "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
+        },
+        "runtime": {
+          "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
+        }
+      },
       "Newtonsoft.Json/8.0.3": {
         "type": "package",
         "compile": {
@@ -10138,6 +10317,22 @@
         },
         "runtime": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Stripe.net/6.3.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl": "1.1.10",
+          "Microsoft.Bcl.Build": "1.0.21",
+          "Microsoft.Net.Http": "2.2.29",
+          "Newtonsoft.Json": "8.0.3",
+          "modernhttpclient": "2.4.2"
+        },
+        "compile": {
+          "lib/dotnet/Stripe.net.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/Stripe.net.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -11659,6 +11854,15 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "WindowsAzure.Messaging.Managed/0.1.7.9": {
+        "type": "package",
+        "compile": {
+          "lib/netcore45/Microsoft.WindowsAzure.Messaging.Managed.dll": {}
+        },
+        "runtime": {
+          "lib/netcore45/Microsoft.WindowsAzure.Messaging.Managed.dll": {}
+        }
+      },
       "WindowsAzure.Storage/7.0.0": {
         "type": "package",
         "dependencies": {
@@ -12049,6 +12253,15 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "modernhttpclient/2.4.2": {
+        "type": "package",
+        "compile": {
+          "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
+        },
+        "runtime": {
+          "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll": {}
+        }
+      },
       "Newtonsoft.Json/8.0.3": {
         "type": "package",
         "compile": {
@@ -12056,6 +12269,22 @@
         },
         "runtime": {
           "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Stripe.net/6.3.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl": "1.1.10",
+          "Microsoft.Bcl.Build": "1.0.21",
+          "Microsoft.Net.Http": "2.2.29",
+          "Newtonsoft.Json": "8.0.3",
+          "modernhttpclient": "2.4.2"
+        },
+        "compile": {
+          "lib/dotnet/Stripe.net.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/Stripe.net.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -13552,6 +13781,15 @@
         },
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "WindowsAzure.Messaging.Managed/0.1.7.9": {
+        "type": "package",
+        "compile": {
+          "lib/netcore45/Microsoft.WindowsAzure.Messaging.Managed.dll": {}
+        },
+        "runtime": {
+          "lib/netcore45/Microsoft.WindowsAzure.Messaging.Managed.dll": {}
         }
       },
       "WindowsAzure.Storage/7.0.0": {
@@ -14506,6 +14744,24 @@
         "ref/xamarinmac20/_._"
       ]
     },
+    "modernhttpclient/2.4.2": {
+      "sha512": "Srkrjz2wBCh7af+AGqpPkJ3FSSFSruzg9mHVwwXiklf9gx2L1Ss2M+p2Mf4Fw17AOe6yPuJwdu4AAoslc6zP+w==",
+      "type": "package",
+      "files": [
+        "lib/ModernHttpClient-2.4.1.zip",
+        "lib/MonoAndroid/ModernHttpClient.dll",
+        "lib/MonoAndroid/ModernHttpClient.dll.mdb",
+        "lib/MonoAndroid/OkHttp.dll",
+        "lib/MonoTouch/ModernHttpClient.dll",
+        "lib/MonoTouch/ModernHttpClient.dll.mdb",
+        "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll",
+        "lib/Portable-Net45+WinRT45+WP8+WPA81/ModernHttpClient.dll.mdb",
+        "lib/Xamarin.iOS10/ModernHttpClient.dll",
+        "lib/Xamarin.iOS10/ModernHttpClient.dll.mdb",
+        "modernhttpclient.2.4.2.nupkg.sha512",
+        "modernhttpclient.nuspec"
+      ]
+    },
     "Newtonsoft.Json/8.0.3": {
       "sha512": "KGsYQdS2zLH+H8x2cZaSI7e+YZ4SFIbyy1YJQYl6GYBWjf5o4H1A68nxyq+WTyVSOJQ4GqS/DiPE+UseUizgMg==",
       "type": "package",
@@ -14525,6 +14781,20 @@
         "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.dll",
         "lib/portable-net45+wp80+win8+wpa81+dnxcore50/Newtonsoft.Json.xml",
         "tools/install.ps1"
+      ]
+    },
+    "Stripe.net/6.3.3": {
+      "sha512": "gWp4sKJq6WB0nXzlm8Nm+upMX8rUzQZWexkbMIr6i1mMmLD6W/sBMqEOXkjf3SvcSqC/pzLm5yP3NpmyncZZMg==",
+      "type": "package",
+      "files": [
+        "Stripe.net.6.3.3.nupkg.sha512",
+        "Stripe.net.nuspec",
+        "lib/dotnet/Stripe.net.dll",
+        "lib/dotnet/Stripe.net.pdb",
+        "lib/net45/Stripe.net.dll",
+        "lib/net45/Stripe.net.pdb",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid+MonoTouch+Xamarin.iOS+Xamarin.Mac/Stripe.net.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid+MonoTouch+Xamarin.iOS+Xamarin.Mac/Stripe.net.pdb"
       ]
     },
     "System.AppContext/4.0.0": {
@@ -17094,6 +17364,19 @@
         "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll"
       ]
     },
+    "WindowsAzure.Messaging.Managed/0.1.7.9": {
+      "sha512": "9g7MVL7Odl5qwG9TSsaab/MKFXdeLitrvbbRAO7xWk4CGeD1j17GPeUsuufO8VY5+GAcCQjJcrM6fU+y/eLCBg==",
+      "type": "package",
+      "files": [
+        "WindowsAzure.Messaging.Managed.0.1.7.9.nupkg.sha512",
+        "WindowsAzure.Messaging.Managed.nuspec",
+        "lib/netcore45/Microsoft.WindowsAzure.Messaging.Managed.dll",
+        "lib/netcore45/Microsoft.WindowsAzure.Messaging.Managed.pri",
+        "lib/windowsphone8/Microsoft.WindowsAzure.Messaging.dll",
+        "lib/wpa81/Microsoft.WindowsAzure.Messaging.Managed.dll",
+        "lib/wpa81/Microsoft.WindowsAzure.Messaging.Managed.pri"
+      ]
+    },
     "WindowsAzure.Storage/7.0.0": {
       "sha512": "AKxGH6NpZN0fRc2eRKtlDdkk1JW5uqCMeHCF06Z/L5xkYajM7OWquzsjAkQsi2s5a2O0Y4iE6WZOcT5PLE0IMA==",
       "type": "package",
@@ -17117,6 +17400,8 @@
       "Microsoft.Azure.Mobile.Client >= 2.0.1",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
       "Newtonsoft.Json >= 8.0.3",
+      "Stripe.net >= 6.3.3",
+      "WindowsAzure.Messaging.Managed >= 0.1.7.9",
       "WindowsAzure.Storage >= 7.0.0"
     ],
     "UAP,Version=v10.0": []

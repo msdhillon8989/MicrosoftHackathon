@@ -8,28 +8,94 @@
     xmlns:data="using:teamnotfound.DataModel"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="EVENTS" HorizontalAlignment="center" FontSize="30" Margin="50" FontWeight="Bold"></TextBlock>
-        <ListView Name="gridView" Margin="63,97,63,-76" IsItemClickEnabled="False">
-            <ListView.ItemTemplate>
-                <DataTemplate  x:DataType="data:Event">
-                    <StackPanel HorizontalAlignment="Center" Background="DimGray" Tapped="Event_Tapped">
-                        <TextBlock x:Name="eventId" FontSize="10" Text="" Visibility="Collapsed"></TextBlock>
-                        <TextBlock FontSize="16" Text="Title: "></TextBlock>
-                        <TextBlock FontSize="16" Text="{x:Bind Event.Title}"></TextBlock>
+        <Grid Background="Gray">
+            <StackPanel VerticalAlignment="Top" Margin="0,0,0,0" Background="#FF060656" >
+                <TextBlock x:Name="Hello"  HorizontalAlignment="Center"   Style="{StaticResource HeaderTextBlockStyle}" TextWrapping="Wrap" Text="Events" Height="75" SelectionHighlightColor="#FF334676"  Foreground="Gray" />
+            </StackPanel>
 
-                        <TextBlock FontSize="16" Text="Base Price: "></TextBlock>
-                        <TextBlock FontSize="16" Text="{x:Bind Event.BasePrice}"></TextBlock>
 
-                        <TextBlock FontSize="16" Text="Bidding closes on: "></TextBlock>
-                        <TextBlock FontSize="16" Text="{x:Bind Event.CloseDate}"></TextBlock>
-                        <TextBlock FontSize="10" Text=""></TextBlock>
-                        <TextBlock FontSize="10" Text=""></TextBlock>
-                        <TextBlock FontSize="10" Text=""></TextBlock>
+            <StackPanel Background="#FFdddddd"   Margin="10,90,10,10">
 
+                <StackPanel Orientation="Vertical"  Padding="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656">
+
+                    <StackPanel Orientation="Horizontal"  HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                        <TextBlock FontSize="12" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="Title : " ></TextBlock>
+                        <TextBlock FontSize="12"  Foreground="Gray" VerticalAlignment="Bottom" Text="India vs Pakistan"></TextBlock>
                     </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </Grid>
+                    <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top" >
+
+                        <StackPanel Orientation="Vertical"   HorizontalAlignment="Left" VerticalAlignment="Top" >
+
+                            <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
+                                <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Base Price : " ></TextBlock>
+                                <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="890" ></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="Bid Close Date : " ></TextBlock>
+                                <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="23-June-2016"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="90,0,0,0"  HorizontalAlignment="Stretch" VerticalAlignment="Top">
+
+                            <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="Bids : " ></TextBlock>
+                                <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="5" ></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top" >
+                                <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="Status : " ></TextBlock>
+                                <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="Bidding" ></TextBlock>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </StackPanel>
+
+
+
+
+
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical"  Padding="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" >
+
+                    <StackPanel Orientation="Horizontal"  HorizontalAlignment="Stretch" VerticalAlignment="Top" >
+                        <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="Title : " ></TextBlock>
+                        <TextBlock FontSize="12"  Foreground="Gray" VerticalAlignment="Bottom" Text="India vs South Africa" ></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
+
+                        <StackPanel Orientation="Vertical"   HorizontalAlignment="Left" VerticalAlignment="Top" >
+
+                            <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
+                                <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Base Price : " ></TextBlock>
+                                <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="230" ></TextBlock>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"   >
+                                <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="Bid Close Date : " ></TextBlock>
+                                <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="23-June-2016" ></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Margin="90,0,0,0"  HorizontalAlignment="Stretch" VerticalAlignment="Top" >
+
+                            <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top" >
+                                <TextBlock FontSize="10" FontWeight="Bold"  Foreground="Gray" VerticalAlignment="Bottom" Text="Bids : " ></TextBlock>
+                                <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="5" ></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top">
+                                <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="Status : " ></TextBlock>
+                                <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="Bidding" ></TextBlock>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </StackPanel>
+
+
+
+
+
+                </StackPanel>
+
+            </StackPanel>
+        </Grid>
 </Page>

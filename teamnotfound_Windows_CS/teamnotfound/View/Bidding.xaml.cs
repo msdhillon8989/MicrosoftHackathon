@@ -1,6 +1,7 @@
 ﻿using Microsoft.WindowsAzure.MobileServices;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -31,12 +32,14 @@ namespace teamnotfound
         private MobileServiceCollection<Bid, Bid> bids;
         List<Country> country = new List<Country>();
         List<Bid> bid = new List<Bid>();
+        int i = 1;
         List<String> parameter;
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             //parameter = e.Parameter as List<String>;
             //Debug.Write("param1: " + parameter);
             //getProjects(parameter);
+            //createCountry();
             getCountry();
 
         }
@@ -44,13 +47,69 @@ namespace teamnotfound
         {
             this.InitializeComponent();
         }
+        /*private async void createCountry()
+        {
+            var count = new Country {Id="1234" ,CountryName="Australia"};
+            await InsertCountry(count);
+            
+
+        }
+        private async Task InsertCountry(Country count)
+        {
+            // This code inserts a new TodoItem into the database. When the operation completes
+            // and Mobile Apps has assigned an Id, the item is added to the CollectionView
+            await countryTable.InsertAsync(count);
+
+
+            //await App.MobileService.SyncContext.PushAsync(); // offline sync
+        }*/
         private async void getCountry()
         {
             items = await countryTable
                    .ToCollectionAsync();
             country = items.ToList();
-            countryBox.ItemsSource = country;
+            type.ItemsSource = country;
 
+        }
+        
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            string value = (sender as CheckBox).Content.ToString();
+            Debug.Write("Value: " + value);
+            //StackPanel sp = new StackPanel();
+            //sp.Orientation = Orientation.Horizontal;
+            StackPanel sp = new StackPanel();
+            sp.Name = "panel-" + value;
+            sp.Orientation = Orientation.Horizontal;
+            TextBlock countryTextBlock = new TextBlock();
+            countryTextBlock.Text = value;
+            countryTextBlock.Name = "countName"+i;
+            sp.Children.Add(countryTextBlock);
+
+            TextBox bidTextBlock = new TextBox();
+            Thickness margin = bidTextBlock.Margin;
+            margin.Left = 20;
+            bidTextBlock.Margin = margin;
+            
+            sp.Children.Add(bidTextBlock);
+
+            TextBox highestTextBlock = new TextBox();
+            highestTextBlock.Text = "value";
+            Thickness margin1 = highestTextBlock.Margin;
+            margin1.Left = 20;
+            highestTextBlock.Margin = margin1;
+            sp.Children.Add(highestTextBlock);
+            sPanel.Children.Add(sp);
+            i++;
+        }
+
+        private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            string value=(sender as CheckBox).Content.ToString();
+            UIElement child = sPanel.FindName("panel-"+value) as UIElement;
+            
+            sPanel.Children.Remove(child);
+            
         }
         /*private async void getProjects(List<String> parameter)
         {
@@ -116,7 +175,7 @@ namespace teamnotfound
                             .Where(Bid => Bid.ProjectId == bid.ProjectId)
                             .ToCollectionAsync();
             Bid bd= bids.FirstOrDefault();*/
-            /*await bidTable.UpdateAsync(bidding);
-        }*/
+        /*await bidTable.UpdateAsync(bidding);
+    }*/
     }
 }

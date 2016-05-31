@@ -14,30 +14,37 @@
 
         <StackPanel HorizontalAlignment="Center">
             <TextBlock HorizontalAlignment="Left" Margin="10,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200">
+        	                <Run Text="Event Title"/>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200">
+        	                <Run Text="Event Title"/>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" Margin="10,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200">
         	                <Run Text="Countries"/>
             </TextBlock>
-        
-        <ComboBox x:Name="countryBox">
+
+            
+            <ComboBox x:Name="type" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="340">
                 <ComboBox.ItemTemplate>
-                    <DataTemplate x:DataType="data:Country">
-                        <StackPanel Orientation="Horizontal">
-                            <CheckBox
-                                Width="20" />
-                            <TextBlock Text="x:Bind={Country.CountryName}"
-                       Width="100" />
-                        </StackPanel>
+                    <DataTemplate x:DataType="data:Country" >
+                        <CheckBox Content="{Binding CountryName}" Checked="CheckBox_Checked"
+	                                            Unchecked="CheckBox_Unchecked"/>
                     </DataTemplate>
                 </ComboBox.ItemTemplate>
             </ComboBox>
+
         </StackPanel>
-        <Button x:Name="btnSubmit" Content="Bid" HorizontalAlignment="Center" Margin="40" Width="245" Click="button_Click"/>
-            
-        
-               
-           
-            
-        
-        
-        
+
+        <StackPanel x:Name="sPanel" Orientation="Vertical" Margin="150,485,0,0">
+        </StackPanel>
+        <Button x:Name="btnSubmit" Content="Bid" HorizontalAlignment="Center" Margin="40" Width="245"/>
+
+
+
+
+
+
+
+
     </Grid>
 </Page>
