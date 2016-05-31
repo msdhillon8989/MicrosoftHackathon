@@ -4,21 +4,121 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:teamnotfound.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:data="using:teamnotfound.DataModel"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:data="using:teamnotfound.DataModel"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock Text="Bids" HorizontalAlignment="center" FontSize="30" Margin="50" FontWeight="Bold"></TextBlock>
-        <ListView x:Name="projectlist" Margin="63,97,63,50"  >
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="data:Bid" >
-                    <StackPanel HorizontalAlignment="Center" Background="DimGray" Tapped="StackPanel_Tapped">
-                        <TextBlock FontSize="16" Text="{x:Bind Bidder}" ></TextBlock>
-                        <TextBlock FontSize="10" Text="{x:Bind BiddAmt}" ></TextBlock>
-                     </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+    <Grid Background="Gray">
+        <StackPanel VerticalAlignment="Top" Margin="0,0,0,0" Background="#FF060656" >
+            <TextBlock x:Name="Hello"  HorizontalAlignment="Center"   Style="{StaticResource HeaderTextBlockStyle}" TextWrapping="Wrap" Text="Channels" Height="75" SelectionHighlightColor="#FF334676"  Foreground="Gray" />
+        </StackPanel>
+
+
+        <StackPanel Background="#FFdddddd"   Margin="10,90,10,10">
+
+            <StackPanel Orientation="Vertical"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" Tapped="StackPanel_Tapped">
+
+                <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
+
+                    <StackPanel Orientation="Vertical" Padding="5,5,5,5"  HorizontalAlignment="Left" VerticalAlignment="Top"  >
+
+                        <StackPanel Orientation="Horizontal"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  >
+                            <TextBlock  Width="150" FontSize="20" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Sony" ></TextBlock>
+                        </StackPanel>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="35,0,0,0" Padding="5,5,5,5"  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"   >
+
+                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   Tapped="StackPanel_Tapped">
+                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Tapped="TextBlock_Tapped" Text="Bid : " ></TextBlock>
+                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text=" $60M" ></TextBlock>
+                        </StackPanel>
+
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Background="Gray" >
+                        <Button HorizontalAlignment="Stretch" Foreground="#FF060656" VerticalAlignment="Stretch">Assign</Button>
+                    </StackPanel>
+
+                </StackPanel>
+
+
+
+
+
+            </StackPanel>
+
+
+            <StackPanel Orientation="Vertical"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" Tapped="StackPanel_Tapped">
+
+                <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
+
+                    <StackPanel Orientation="Vertical" Padding="5,5,5,5"  HorizontalAlignment="Left" VerticalAlignment="Top"  >
+
+                        <StackPanel Orientation="Horizontal"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  >
+                            <TextBlock  Width="150" FontSize="20" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Ten Sports" ></TextBlock>
+                        </StackPanel>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="35,0,0,0" Padding="5,5,5,5"  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"   >
+
+                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   Tapped="StackPanel_Tapped">
+                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Tapped="TextBlock_Tapped" Text="Bid : " ></TextBlock>
+                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text=" $58M" ></TextBlock>
+                        </StackPanel>
+
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Background="Gray" >
+                        <Button HorizontalAlignment="Stretch" Foreground="#FF060656" VerticalAlignment="Stretch">Assign</Button>
+                    </StackPanel>
+
+                </StackPanel>
+
+
+
+
+
+            </StackPanel>
+
+
+            <StackPanel Orientation="Vertical"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" Tapped="StackPanel_Tapped">
+
+                <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
+
+                    <StackPanel Orientation="Vertical" Padding="5,5,5,5"  HorizontalAlignment="Left" VerticalAlignment="Top"  >
+
+                        <StackPanel Orientation="Horizontal"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  >
+                            <TextBlock  Width="150" FontSize="20" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Star Sports" ></TextBlock>
+                        </StackPanel>
+
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="35,0,0,0" Padding="5,5,5,5"  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"   >
+
+                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   Tapped="StackPanel_Tapped">
+                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Tapped="TextBlock_Tapped" Text="Bid : " ></TextBlock>
+                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text=" $56M" ></TextBlock>
+                        </StackPanel>
+
+
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Background="Gray" >
+                        <Button HorizontalAlignment="Stretch" Foreground="#FF060656" VerticalAlignment="Stretch">Assign</Button>
+                    </StackPanel>
+
+                </StackPanel>
+
+
+
+
+
+            </StackPanel>
+
+
+
+
+        </StackPanel>
+        
+        
     </Grid>
 </Page>
