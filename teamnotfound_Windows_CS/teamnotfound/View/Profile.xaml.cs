@@ -113,13 +113,13 @@ namespace teamnotfound.View
             {
                 await GetProfileImage(user.Email);
                // FirstNameTextBlock.Text = user.Fname;
-                //LastNameTextBlock.Text = user.Lname;
+                NameTextBlock.Text = user.Name;
                 EmailTextBlock.Text = user.Email;
                 //MobileTextBlock.Text = user.Mobile;
                 //SummaryTextBox.Text = user.Summary;
                 string serialized = JsonConvert.SerializeObject(user);
                 Global.SetRepositoryValue("userProfile",serialized);
-
+                
                 // SummaryTextBox.T
             }
 

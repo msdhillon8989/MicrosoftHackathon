@@ -56,9 +56,9 @@ namespace teamnotfound.View
                 var userRes = await usertable.Where(usr => usr.Email == userName).ToEnumerableAsync();
                  user = userRes.SingleOrDefault();
             }
-           // FirstNameTextBox.Text = user.Fname;
+           FirstNameTextBox.Text = user.Name;
            // LastNameTextBox.Text = user.Lname;
-            EmailTextBox.Text = user.Email;
+            //EmailTextBox.Text = user.Email;
             //MobileTextBox.Text = user.Mobile;
             //SummaryTextBox.Text = user.Summary;
             FirstNameTextBox.Text = user.Name;
@@ -80,7 +80,7 @@ namespace teamnotfound.View
         {
             if (FirstNameTextBox.Text == "")
             {
-                FnameErrorTextBox.Text = "First Name can't be empty";
+                FnameErrorTextBox.Text = "Name can't be empty";
             }
             else
             {
@@ -88,7 +88,7 @@ namespace teamnotfound.View
             }
         }
 
-        private void MobileTextBox_LostFocus(object sender, RoutedEventArgs e)
+        /*private void MobileTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             if (MobileTextBox.Text == "")
             {
@@ -98,7 +98,7 @@ namespace teamnotfound.View
             {
                 MobileErrorTextBox.Text = "";
             }
-        }
+        }*/
         private static CloudBlobContainer GetContainer()
         {
             
@@ -165,11 +165,11 @@ namespace teamnotfound.View
         private async void NextButton_Click(object sender, RoutedEventArgs e)
         {
             User user = new User();
-            //user.Fname = FirstNameTextBox.Text;
+            user.Name = FirstNameTextBox.Text;
             //user.Lname = LastNameTextBox.Text;
             //user.Mobile = MobileTextBox.Text;
             //user.Summary = SummaryTextBox.Text;
-            user.Email = EmailTextBox.Text;
+            //user.Email = EmailTextBox.Text;
             try
             {
                 string jsData = (string)Global.GetRepositoryValue("userProfile");
@@ -181,13 +181,16 @@ namespace teamnotfound.View
                 var userRes = await usertable.Where(u => u.Email == user.Email).ToEnumerableAsync();
                 User usr = userRes.SingleOrDefault();
                 user.ID = usr.ID;
+                user.Name = FirstNameTextBox.Text;
+                user.Email = (string)Global.GetRepositoryValue("userName");
             }
 
             //Store updated profile in local storage
             string jsonData = JsonConvert.SerializeObject(user);
             Global.SetRepositoryValue("userProfile", jsonData);
            await usertable.UpdateAsync(user);
-            Frame.Navigate(typeof(AddSkill));
+            Frame.Navigate(typeof(Profile));
+            
         }
     }
 

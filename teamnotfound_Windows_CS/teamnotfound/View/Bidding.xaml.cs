@@ -79,11 +79,29 @@ namespace teamnotfound.View
 
         }
 
-        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        private async void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             string value = (sender as CheckBox).Content.ToString();
             Debug.Write("Value: " + value);
             countries.Add(value);
+            List<Bid> bid = new List<Bid>();
+            bid= await bidTable
+                    .Where(Bid => Bid.EventId == parameter[0])
+                    .Where(Bid => Bid.Countr==value)
+                    .ToListAsync();
+            List<Int32> bids1 = new List<Int32>();
+            for (var i = 0; i < bid.Count; i++)
+            {
+                bids1.Add(bid[i].BiddAmt);
+            }
+            Int32 max = -1;
+            for (var j = 0; j < bids1.Count; j++)
+            {
+                if (bids1[j] > max)
+                {
+                    max = bids1[j];
+                }
+            }
             StackPanel sp = new StackPanel();
             sp.Name = "panel-" + value;
             sp.Orientation = Orientation.Horizontal;
@@ -96,6 +114,7 @@ namespace teamnotfound.View
             Thickness margin = bidTextBlock.Margin;
             margin.Left = 20;
             bidTextBlock.Margin = margin;
+            bidTextBlock.Text = "";
             bidTextBlock.Name = "bid-" + value;
             Debug.Write("Bid: " + bidTextBlock.Name);
             sp.Children.Add(bidTextBlock);
@@ -105,6 +124,7 @@ namespace teamnotfound.View
             Thickness margin1 = highestTextBlock.Margin;
             margin1.Left = 20;
             highestTextBlock.Margin = margin1;
+            highestTextBlock.Text =max+"";
             highestTextBlock.Name = "highest-" + value;
             sp.Children.Add(highestTextBlock);
             sPanel.Children.Add(sp);

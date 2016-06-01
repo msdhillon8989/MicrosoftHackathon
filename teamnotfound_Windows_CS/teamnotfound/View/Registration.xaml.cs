@@ -131,7 +131,7 @@ namespace teamnotfound.View
             }
             else if (userType == "User")
             {
-                user.UserType = "Üser";
+                user.UserType = "User";
                 flag = 1;
             }
             if (flag == 1)

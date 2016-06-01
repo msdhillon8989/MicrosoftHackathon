@@ -31,27 +31,19 @@
             <StackPanel Orientation="Vertical" Padding="0,10,0,0">
                     <Image x:Name="ProfileImage"   Source="ms-appx:///Assets/blank-profile-picture-973460_960_720.png" Height="90" Margin="120,0" />
                 </StackPanel>
+               
                 <StackPanel Orientation="Vertical" Padding="0,10,0,0" Margin="0">
-                    <TextBlock x:Name="FirstNameTextBlock" Style="{StaticResource SubtitleTextBlockStyle}" TextWrapping="Wrap" Text="First Name " Foreground="White"  HorizontalAlignment="Center"/>
+                    <TextBlock x:Name="NameTextBlock" Style="{StaticResource SubtitleTextBlockStyle}" TextWrapping="Wrap" Text="Name " Foreground="White"  HorizontalAlignment="Center"  />
                 </StackPanel>
-                <StackPanel Orientation="Vertical" Padding="0,10,0,0" Margin="0">
-                    <TextBlock x:Name="LastNameTextBlock" Style="{StaticResource SubtitleTextBlockStyle}" TextWrapping="Wrap" Text="Last Name " Foreground="White"  HorizontalAlignment="Center"  />
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Padding="0,10,0,0">
-                    <TextBlock x:Name="MobileTextBlock" Style="{StaticResource SubtitleTextBlockStyle}" TextWrapping="Wrap" Text="Mobile No" Foreground="White" HorizontalAlignment="Center"/>
-                </StackPanel>
+                
                 <StackPanel Orientation="Vertical" Padding="0,10,0,0">
                     <TextBlock x:Name="EmailTextBlock" Style="{StaticResource SubtitleTextBlockStyle}" TextWrapping="Wrap" Text="Email" Foreground="White"  HorizontalAlignment="Center"/>
                 </StackPanel>
 
-                <StackPanel Orientation="Vertical">
-                    <TextBox  IsReadOnly="True" x:Name="SummaryTextBox" Text="Hello welocme to the world of universal Windows platform" TextWrapping="Wrap" 
-                         MaxHeight="50" Width="100" 
-                             ScrollViewer.VerticalScrollBarVisibility="Auto"/>
-                </StackPanel>
+                
                 
                 <StackPanel Padding="0,10,0,0">
-                    <Button x:Name="EditButton" Content="Edit" HorizontalAlignment="Center" RenderTransformOrigin="0.489,0.591" Height="31" Margin="158,0,157,0" Click="EditButton_Click"/>
+                    <Button x:Name="SaveButton" Content="Edit Profile" HorizontalAlignment="Center" RenderTransformOrigin="0.489,0.591" Height="31" Margin="158,0,157,0" Click="EditButton_Click"/>
 
                 </StackPanel>
             </StackPanel>

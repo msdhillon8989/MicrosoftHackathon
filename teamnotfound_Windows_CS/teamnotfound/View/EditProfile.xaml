@@ -7,14 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-        <Grid>
-        <ScrollViewer  VerticalScrollBarVisibility="Auto">
+    <Grid HorizontalAlignment="Stretch" Background="Gray">
+        <!--<ScrollViewer  VerticalScrollBarVisibility="Auto">
             <VisualStateManager.VisualStateGroups>
                 <VisualStateGroup>
                     <VisualState>
-                        <VisualState.StateTriggers>
+                        <VisualState.StateTriggers>-->
                             <!--VisualState to be triggered when window width is >=720 effective pixels.-->
-                            <AdaptiveTrigger MinWindowWidth="720" />
+                           <!-- <AdaptiveTrigger MinWindowWidth="720" />
                         </VisualState.StateTriggers>
 
                         <VisualState.Setters>
@@ -22,49 +22,33 @@
                         </VisualState.Setters>
                     </VisualState>
                 </VisualStateGroup>
-            </VisualStateManager.VisualStateGroups>
-            <StackPanel x:Name="myPanel" Orientation="Vertical" RequestedTheme="Dark" Margin="0,75,0,0" >
+            </VisualStateManager.VisualStateGroups>-->
+        <StackPanel VerticalAlignment="Top" Margin="0,0,0,0" Background="#FF060656" >
+            <TextBlock x:Name="Hello"  HorizontalAlignment="Center"   Style="{StaticResource HeaderTextBlockStyle}" TextWrapping="Wrap" Text="Edit Profile" Height="75" SelectionHighlightColor="#FF334676"  Foreground="Gray" />
+        </StackPanel>
+        <StackPanel Background="#FFdddddd"   Margin="10,90,10,10">
 
-                <StackPanel.Background>
-                    <ImageBrush Stretch="Fill" ImageSource="ms-appx:///Assets/black-background_00313351.png"/>
-                </StackPanel.Background>
-                <StackPanel Orientation="Vertical" Padding="0,10,0,0">
-                    <Image x:Name="ProfileImage"   Source="ms-appx:///Assets/blank-profile-picture-973460_960_720.png" Height="85" Margin="120,0" Tapped="ProfileImage_Tapped" />
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Padding="0,10,0,0" Margin="0">
-                    <TextBox Header="First Name" x:Name="FirstNameTextBox" TextWrapping="Wrap" Text="" Background="#FFBFB7B7" Width="250" VerticalAlignment="Center"  HorizontalAlignment="Center" LostFocus="FirstNameTextBox_LostFocus" />
-                    <TextBlock x:Name="FnameErrorTextBox" Foreground="Red" Text="" HorizontalAlignment="Center"></TextBlock>
-
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Padding="0,10,0,0" Margin="0">
-                    <TextBox Header="Last Name"  x:Name="LastNameTextBox" TextWrapping="Wrap" Text="" Background="#FFBFB7B7" Width="250" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0" BorderThickness="0"/>
-
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Padding="0,10,0,0">
-                    <TextBox Header="Mobile No"  x:Name="MobileTextBox" TextWrapping="Wrap" Text="" Background="#FFBFB7B7" Width="250" HorizontalAlignment="Center" Margin="0" LostFocus="MobileTextBox_LostFocus"/>
-                    <TextBlock x:Name="MobileErrorTextBox" Foreground="Red" Text="" HorizontalAlignment="Center"></TextBlock>
-
-                </StackPanel>
-                <StackPanel Orientation="Vertical" Padding="0,10,0,0">
-                    <TextBox  Header="Email" x:Name="EmailTextBox" TextWrapping="Wrap" Text=""  Background="#FFBFB7B7" HorizontalAlignment="Center" Width="250" IsReadOnly="True"/>
-                    <TextBlock x:Name="EmailErrorTextBox" Foreground="Red" Text="" HorizontalAlignment="Center"></TextBlock>
-
-                </StackPanel>
-                <StackPanel Orientation="Vertical">
-                    <TextBox Header="Summary"   x:Name="SummaryTextBox" Text="Hello welocme to the world of universal Windows platform" TextWrapping="Wrap" 
-                         MaxHeight="150" Width="250" 
-                             ScrollViewer.VerticalScrollBarVisibility="Auto"/>
-                </StackPanel>
-                <StackPanel Padding="0,10,0,0">
-                <Button x:Name="NextButton" Content="Next" HorizontalAlignment="Center" Click="NextButton_Click" />
-                </StackPanel>
+            <StackPanel Orientation="Vertical" Padding="0,10,0,0" Margin="10,90,10,10">
+                <Image x:Name="ProfileImage"   Source="ms-appx:///Assets/blank-profile-picture-973460_960_720.png" Height="85" Margin="120,0" Tapped="ProfileImage_Tapped" />
             </StackPanel>
-            </ScrollViewer>
-            <Canvas Height="76" VerticalAlignment="Top" Background="#FF060656" HorizontalAlignment="Stretch">
+            <StackPanel Orientation="Vertical" Padding="0,10,0,0" Margin="0">
+                <TextBox Header="Name" Foreground="#FF060656" x:Name="FirstNameTextBox" TextWrapping="Wrap" Text="" Background="#FFBFB7B7" Width="250" VerticalAlignment="Center"  HorizontalAlignment="Center" LostFocus="FirstNameTextBox_LostFocus" />
+                <TextBlock x:Name="FnameErrorTextBox" Foreground="Red" Text="" HorizontalAlignment="Center"></TextBlock>
 
-                <TextBlock x:Name="textBlock"   Style="{StaticResource HeaderTextBlockStyle}" TextWrapping="Wrap" Text="Edit Profile" Height="75" SelectionHighlightColor="#FF334676" Width="175" Canvas.Left="135" Foreground="#FFCDA3A3" HorizontalAlignment="Center" Margin="-50,0,0,0" />
-            </Canvas>
-        </Grid>
+            </StackPanel>
+
+
+
+            <StackPanel Padding="0,10,0,0" Margin="10,20,10,10">
+                <Button x:Name="NextButton" FontWeight="Bold"  Content="Save" Foreground="gray" FontSize="20" Background="#FF060656" HorizontalAlignment="Center" Margin="48,100,47,0" VerticalAlignment="Top" Width="245" Click="NextButton_Click"/>
+
+
+            </StackPanel>
+
+
+        </StackPanel>
+
+    </Grid>
 
     
 </Page>
