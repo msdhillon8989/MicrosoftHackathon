@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace teamnotfound.View
+namespace teamnotfound.DataModel
 {
-    class CountryBasedBidCount
+   public class CountryBasedBidCount
     {
-        string country { get; set; }
-        int count { get; set; }
+      public  string country { get; set; }
+    public    string count { get; set; }
+   public     string Status { get; set; }
     }
 }
