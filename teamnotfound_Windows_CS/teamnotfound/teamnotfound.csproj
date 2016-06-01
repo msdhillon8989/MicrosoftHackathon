@@ -132,6 +132,7 @@
     <Compile Include="View\BillingPage.xaml.cs">
       <DependentUpon>BillingPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataModel\CountryBasedBidCount.cs" />
     <Compile Include="View\DashBoard.xaml.cs">
       <DependentUpon>DashBoard.xaml</DependentUpon>
     </Compile>
