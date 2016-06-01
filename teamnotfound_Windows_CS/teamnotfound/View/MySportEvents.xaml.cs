@@ -37,9 +37,9 @@ namespace teamnotfound.View
         private async void getBids()
         {
             // Bidder must come from global.cs
-           // string user = (string)Global.GetRepositoryValue("userName");
+           string user = (string)Global.GetRepositoryValue("userName");
             List<Bid> bid = await bidTable
-               .Where(Bid => Bid.Bidder == "Diksha@hpe.com")
+               .Where(Bid => Bid.Bidder == user)
                    .ToListAsync();
 
             List<String> PIdList = new List<String>();

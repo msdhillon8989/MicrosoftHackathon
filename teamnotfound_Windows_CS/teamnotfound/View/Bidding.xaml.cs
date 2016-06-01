@@ -20,7 +20,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace teamnotfound
+namespace teamnotfound.View
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -126,7 +126,7 @@ namespace teamnotfound
                     .Where(Event => Event.Id == parameter[0])
                     .ToListAsync();
 
-            title.Text = items[0].Title;
+            title.Text = items[0].Title+"\n"+items[0].StartDate+"-"+items[0].EndDate+"\n"+items[0].Location;
 
             if (parameter[1] == "Add")
             {
@@ -191,7 +191,7 @@ namespace teamnotfound
 
                 }
             
-            //Frame.Navigate(typeof(MySportEvents));
+            Frame.Navigate(typeof(MySportEvents));
            
         }
         }
