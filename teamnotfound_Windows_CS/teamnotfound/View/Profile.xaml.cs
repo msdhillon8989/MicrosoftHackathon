@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -106,7 +107,8 @@ namespace teamnotfound.View
         private async void SetUpProfile()
         {
 
-            string userName = (string)Global.GetRepositoryValue("userName");
+            string userName = Global.GetRepositoryValue("userName").ToString();
+            Debug.WriteLine("username "+ userName);
             var userRes = await usertable.Where(usr => usr.Email == userName).ToEnumerableAsync();
             User user = userRes.SingleOrDefault();
             if (user != null)
