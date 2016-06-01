@@ -61,8 +61,9 @@ namespace teamnotfound.View
                 var count = new EventBidCount { Event = _event, BidCount = (int)bids.Count};
                 eventCount.Add(count);
             }
+           
             //gridView.ItemsSource = items;
-          //  Global.SetRepositoryValue("MyPost", projectCount);
+            //  Global.SetRepositoryValue("MyPost", projectCount);
 
 
         }
