@@ -48,6 +48,7 @@ namespace teamnotfound.View
 
 
             items = await eventTable .Where(Event => Event.Status=="Bidding").ToCollectionAsync();
+
              
            
             foreach (var _event in items)
@@ -56,21 +57,25 @@ namespace teamnotfound.View
                
                 Debug.Write(_event.Id);
                 bids = await bidTable.Where(Bid => Bid.EventId == _event.Id.ToString()).ToCollectionAsync();
-
+                
                 Debug.Write("    count "+bids.Count+"    ");
                 var count = new EventBidCount { Event = _event, BidCount = (int)bids.Count};
                 eventCount.Add(count);
+
             }
-           
+            allevents.ItemsSource = eventCount;
             //gridView.ItemsSource = items;
             //  Global.SetRepositoryValue("MyPost", projectCount);
 
 
         }
 
-        private void StackPanel_Tapped(object sender, TappedRoutedEventArgs e)
+        private void StackPanel_Tapped_1(object sender, TappedRoutedEventArgs e)
         {
+            var selected = allevents.SelectedIndex;
+            EventBidCount event1 = eventCount.ElementAt(selected);
 
+            Frame.Navigate(typeof(AllBidsCountry),event1.Event.Id);
         }
     }
 }
