@@ -44,7 +44,7 @@
 
                                     <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"  >
                                         <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Bids : " ></TextBlock>
-                                        <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="5" ></TextBlock>
+                                        <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="{x:Bind total_bids}" ></TextBlock>
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   >
                                         <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="{x:Bind Status}" ></TextBlock>

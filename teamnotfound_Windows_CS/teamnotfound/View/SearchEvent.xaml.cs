@@ -36,15 +36,28 @@ namespace teamnotfound.View
             this.InitializeComponent();
             getProjects();
         }
+        List<Event> events = new List<Event>();
         private async void getProjects()
         {
 
-            List<Event> events = await eventTable
+            events = await eventTable
                .Where(Event => Event.Status == "Bidding")
                    .ToListAsync();
-            
+            for (var i = 0; i < events.Count; i++)
+            {
+                string cat = events[i].Id;
+                
+                List<Bid> bids = await bidTable
+                    .Where(Bid => Bid.EventId == cat)
+                        .ToListAsync();
+
+                
+                Debug.Write("Count: " + bids.Count);
+                events[i].total_bids = bids.Count;
+            }
             listView.ItemsSource = events;
         }
+        
         private async void Project_Tapped(object sender, RoutedEventArgs e)
         {
             List<String> param = new List<String>();

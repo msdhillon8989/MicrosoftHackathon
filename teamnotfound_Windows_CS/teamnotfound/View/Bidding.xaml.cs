@@ -124,7 +124,17 @@ namespace teamnotfound.View
             Thickness margin1 = highestTextBlock.Margin;
             margin1.Left = 20;
             highestTextBlock.Margin = margin1;
-            highestTextBlock.Text =max+"";
+            if (max == -1)
+            {
+                List<Event> items = await eventTable
+                    .Where(Event => Event.Id == parameter[0])
+                    .ToListAsync();
+                highestTextBlock.Text = items[0].BasePrice + "";
+            }
+            else
+            {
+                highestTextBlock.Text = max + "";
+            }
             highestTextBlock.Name = "highest-" + value;
             sp.Children.Add(highestTextBlock);
             sPanel.Children.Add(sp);
@@ -146,7 +156,7 @@ namespace teamnotfound.View
                     .Where(Event => Event.Id == parameter[0])
                     .ToListAsync();
 
-            title.Text = items[0].Title+"\n"+items[0].StartDate+"-"+items[0].EndDate+"\n"+items[0].Location;
+            title.Text = items[0].Title+"\n"+items[0].StartDate+"-"+items[0].EndDate+"\n"+items[0].Location+"\nBase Price: "+items[0].BasePrice;
 
             if (parameter[1] == "Add")
             {
@@ -183,7 +193,7 @@ namespace teamnotfound.View
                 TextBox child3 = child.FindName("highest-" + countries[i]) as TextBox;
                 Debug.Write("Bid1: " + child2.Name);
                 Debug.Write("Bid2: " + child2.Text);
-                var bidding = new Bid {  BiddAmt = Int32.Parse(child2.Text), Bidder = user, EventId = parameter[0], Countr=countries[i] };
+                var bidding = new Bid {  BiddAmt = Int32.Parse(child2.Text), Bidder = user, EventId = parameter[0], Countr=countries[i],Status="Pending" };
 
                 if ((btnSubmit.Content).ToString() == "Bid")
                 {
@@ -198,13 +208,13 @@ namespace teamnotfound.View
                             .ToListAsync();
                     if (bid.Count != 0)
                     {
-                        bidding = new Bid { Id = bid[0].Id, BiddAmt = Int32.Parse(child2.Text), Bidder = user, EventId = parameter[0], Countr = countries[i] };
+                        bidding = new Bid { Id = bid[0].Id, BiddAmt = Int32.Parse(child2.Text), Bidder = user, EventId = parameter[0], Countr = countries[i], Status = "Pending" };
                         await UpdateBid(bidding);
                     }
                     
                     else
                     {
-                        bidding = new Bid { BiddAmt = Int32.Parse(child2.Text), Bidder = user, EventId = parameter[0], Countr = countries[i] };
+                        bidding = new Bid { BiddAmt = Int32.Parse(child2.Text), Bidder = user, EventId = parameter[0], Countr = countries[i], Status = "Pending" };
                         await InsertBid(bidding);
                     }
 

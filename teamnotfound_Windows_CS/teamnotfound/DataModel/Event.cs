@@ -24,6 +24,7 @@ namespace teamnotfound.DataModel
         public DateTime CloseDate { get; set; }
         [JsonProperty(PropertyName = "status")]
         public string Status { get; set; }
+        public int total_bids { get; set; }
 
     }
 }
