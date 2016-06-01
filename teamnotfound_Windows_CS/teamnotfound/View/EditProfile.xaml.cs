@@ -177,7 +177,7 @@ namespace teamnotfound.View
                 user.ID = usr.ID;
                 user.Name = FirstNameTextBox.Text;
                 user.Email = (string)Global.GetRepositoryValue("userName");
-                user.UserType=
+                user.UserType = "User";
             }
            catch(Exception ex)
             {

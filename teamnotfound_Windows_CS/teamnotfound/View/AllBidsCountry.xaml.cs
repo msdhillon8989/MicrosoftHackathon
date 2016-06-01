@@ -6,6 +6,8 @@ using System.Diagnostics;
 using Microsoft.WindowsAzure.MobileServices;
 using System.Collections;
 using System.Collections.Generic;
+using Windows.UI.Xaml.Input;
+using System.Linq;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 

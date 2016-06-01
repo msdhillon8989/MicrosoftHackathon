@@ -18,7 +18,7 @@
             <TextBlock  Foreground="#FF060656" HorizontalAlignment="Left"  Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" >
         		<Run Text="Event Details"/>
             </TextBlock>
-            <TextBlock x:Name="title" HorizontalAlignment="Left" Margin="10,0,0,0"  VerticalAlignment="Top" Width="200"/>
+            <TextBlock x:Name="title" HorizontalAlignment="Left" Margin="10,0,0,0"  VerticalAlignment="Top"/>
             <TextBlock  Foreground="#FF060656" HorizontalAlignment="Left"  Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" >
         		<Run Text="Select Countries"/>
             </TextBlock>
@@ -37,13 +37,13 @@
 			<StackPanel x:Name="sPanel" Background="#FFdddddd" Orientation="Vertical" Margin="10,90,10,10">
                 <StackPanel Orientation="Horizontal">
                     <StackPanel Margin="20">
-                        <TextBlock Text="Country"/>
+                        <TextBlock Text="Country"  Foreground="#FF060656"/>
                     </StackPanel>
                     <StackPanel Margin="20">
-                        <TextBlock Text="Bid"/>
+                        <TextBlock Text="Bid"  Foreground="#FF060656"/>
                     </StackPanel>
                     <StackPanel Margin="20">
-                        <TextBlock Text="Highest Bid"/>
+                        <TextBlock Text="Highest Bid"  Foreground="#FF060656"/>
                     </StackPanel>
 
                 </StackPanel>
