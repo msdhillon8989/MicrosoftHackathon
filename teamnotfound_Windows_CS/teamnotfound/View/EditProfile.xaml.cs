@@ -175,14 +175,16 @@ namespace teamnotfound.View
                 string jsData = (string)Global.GetRepositoryValue("userProfile");
                 var usr = JsonConvert.DeserializeObject<User>(jsData);
                 user.ID = usr.ID;
+                user.Name = FirstNameTextBox.Text;
+                user.Email = (string)Global.GetRepositoryValue("userName");
+                user.UserType=
             }
            catch(Exception ex)
             {
                 var userRes = await usertable.Where(u => u.Email == user.Email).ToEnumerableAsync();
                 User usr = userRes.SingleOrDefault();
                 user.ID = usr.ID;
-                user.Name = FirstNameTextBox.Text;
-                user.Email = (string)Global.GetRepositoryValue("userName");
+                
             }
 
             //Store updated profile in local storage
