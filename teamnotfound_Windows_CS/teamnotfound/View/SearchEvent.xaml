@@ -19,9 +19,9 @@
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="data:Event">
                     
-
+                                
                             <StackPanel Orientation="Vertical" Tapped="Project_Tapped" Padding="5,5,5,5"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" >
-
+                            <TextBlock x:Name="eventId" Visibility="Collapsed" Text="{Binding Id}"></TextBlock>               
                             <StackPanel Orientation="Horizontal"  HorizontalAlignment="Stretch" VerticalAlignment="Top">
                                 <TextBlock FontSize="12" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Title : " ></TextBlock>
                                 <TextBlock FontSize="12"  Foreground="Gray" VerticalAlignment="Bottom" Text="{x:Bind Title}" ></TextBlock>
