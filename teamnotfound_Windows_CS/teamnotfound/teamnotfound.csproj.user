@@ -6,8 +6,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <UseSimulator>false</UseSimulator>
+    <AppxShowAllApps>False</AppxShowAllApps>
   </PropertyGroup>
 </Project>

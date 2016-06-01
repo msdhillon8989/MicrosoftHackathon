@@ -61,7 +61,7 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <StackPanel Orientation="Vertical"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656">
+            <StackPanel Orientation="Vertical" Visibility="Collapsed" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656">
 
                 <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
 
@@ -95,7 +95,7 @@
             </StackPanel>
 
 
-            <StackPanel Orientation="Vertical"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656">
+            <StackPanel Orientation="Vertical" Visibility="Collapsed" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656">
 
                 <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
 

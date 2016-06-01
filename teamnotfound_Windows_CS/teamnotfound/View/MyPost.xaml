@@ -63,7 +63,7 @@
             </ListView>
 
 
-            <StackPanel Orientation="Vertical"  Padding="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656"   >
+            <StackPanel Orientation="Vertical" Visibility="Collapsed" Padding="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656"   >
 
                 <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"   >
                    
