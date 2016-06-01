@@ -75,8 +75,10 @@ namespace teamnotfound.View
             {
                 PassportStatusText.Text = "Account Login Successful";
                 var user = await userTable.Where(User => User.Email == userName).ToCollectionAsync<User>();
-
-                if(user.ElementAt(0).UserType=="Admin")
+                Debug.WriteLine("IN PASSWORD ");
+                Debug.WriteLine("Writing username" + userName);
+                Global.SetRepositoryValue("userName", userName);
+                if (user.ElementAt(0).UserType=="Admin")
                 {
                     Frame.Navigate(typeof(DashBoardAdmin));
                 }
@@ -84,8 +86,7 @@ namespace teamnotfound.View
                 {
                     Frame.Navigate(typeof(DashBoard));
                 }
-
-                Global.SetRepositoryValue("userName", userName);
+              
                 
             }
             else
