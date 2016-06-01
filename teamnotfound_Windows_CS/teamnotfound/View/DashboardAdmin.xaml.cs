@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using teamnotfound.Common;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -50,7 +51,7 @@ namespace teamnotfound.View
             //Load the custom page
             Frame.Navigate(typeof(Login));
 
-            //Global.SetRepositoryValue("userName", "");
+            Global.SetRepositoryValue("userName", "");
         }
     }
 }

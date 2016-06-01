@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
+using teamnotfound.Common;
 using teamnotfound.DataModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -31,19 +32,22 @@ namespace teamnotfound
         private IMobileServiceTable<Bid> bidTable = App.MobileService.GetTable<Bid>();
         private MobileServiceCollection<Bid, Bid> bids;
         private IMobileServiceTable<admin_key> keyTable = App.MobileService.GetTable<admin_key>();
-       
+        private IMobileServiceTable<Event> eventTable = App.MobileService.GetTable<Event>();
+        //private MobileServiceCollection<Country, Country> items;
         List<Country> country = new List<Country>();
         List<Bid> bid = new List<Bid>();
         int i = 1;
         List<String> parameter;
-        
+        List<string> countries = new List<string>();
+
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            //parameter = e.Parameter as List<String>;
-            //Debug.Write("param1: " + parameter);
+            parameter = e.Parameter as List<String>;
+            Debug.Write("param1: " + parameter);
             //getProjects(parameter);
             //createCountry();
             getCountry();
+            getEvent(parameter);
 
         }
         public Bidding()
@@ -74,26 +78,26 @@ namespace teamnotfound
             type.ItemsSource = country;
 
         }
-        
+
         private void CheckBox_Checked(object sender, RoutedEventArgs e)
         {
             string value = (sender as CheckBox).Content.ToString();
             Debug.Write("Value: " + value);
-            //StackPanel sp = new StackPanel();
-            //sp.Orientation = Orientation.Horizontal;
+            countries.Add(value);
             StackPanel sp = new StackPanel();
             sp.Name = "panel-" + value;
             sp.Orientation = Orientation.Horizontal;
             TextBlock countryTextBlock = new TextBlock();
             countryTextBlock.Text = value;
-            countryTextBlock.Name = "countName"+i;
+            countryTextBlock.Name = "country-" + value;
             sp.Children.Add(countryTextBlock);
 
             TextBox bidTextBlock = new TextBox();
             Thickness margin = bidTextBlock.Margin;
             margin.Left = 20;
             bidTextBlock.Margin = margin;
-            
+            bidTextBlock.Name = "bid-" + value;
+            Debug.Write("Bid: " + bidTextBlock.Name);
             sp.Children.Add(bidTextBlock);
 
             TextBox highestTextBlock = new TextBox();
@@ -101,6 +105,7 @@ namespace teamnotfound
             Thickness margin1 = highestTextBlock.Margin;
             margin1.Left = 20;
             highestTextBlock.Margin = margin1;
+            highestTextBlock.Name = "highest-" + value;
             sp.Children.Add(highestTextBlock);
             sPanel.Children.Add(sp);
             i++;
@@ -108,64 +113,87 @@ namespace teamnotfound
 
         private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
         {
-            string value=(sender as CheckBox).Content.ToString();
-            UIElement child = sPanel.FindName("panel-"+value) as UIElement;
-            
+            string value = (sender as CheckBox).Content.ToString();
+            countries.Remove(value);
+            UIElement child = sPanel.FindName("panel-" + value) as UIElement;
+
             sPanel.Children.Remove(child);
-            
+
         }
-        /*private async void getProjects(List<String> parameter)
+        private async void getEvent(List<String> parameter)
         {
-            items = await projectTable
-                    .Where(Project => Project.Id == parameter[0])
-                    .ToCollectionAsync();
-            proj = items.ToList();
-            txtDesc.Text = proj[0].Description;
-            txtBid.Text = (proj[0].Bid).ToString();
+            List<Event> items = await eventTable
+                    .Where(Event => Event.Id == parameter[0])
+                    .ToListAsync();
+
+            title.Text = items[0].Title;
 
             if (parameter[1] == "Add")
             {
                 btnSubmit.Content = "Bid";
-                txtAmount.Text = "";
-                txtTime.Text = "";
             }
             else if (parameter[1] == "Update")
             {
                 btnSubmit.Content = "Update";
-                bids = await bidTable
-                    .Where(Bid => Bid.ProjectId == parameter[0])
-                    .Where(Bid => Bid.Bidder == "diksha.bajaj@hpe.com")
-                    .ToCollectionAsync();
-                bid = bids.ToList();
-                txtAmount.Text = (bid[0].BiddAmt).ToString();
-                txtTime.Text = (bid[0].TimePeriod).ToString();
+                /* bids = await bidTable
+                     .Where(Bid => Bid.ProjectId == parameter[0])
+                     .Where(Bid => Bid.Bidder == "diksha.bajaj@hpe.com")
+                     .ToCollectionAsync();
+                 bid = bids.ToList();
+                 txtAmount.Text = (bid[0].BiddAmt).ToString();
+                 txtTime.Text = (bid[0].TimePeriod).ToString();*/
 
             }
             //gridView.ItemsSource = items;
         }
 
-        private async void button_Click (object sender, RoutedEventArgs e)
+        private async void button_Click(object sender, RoutedEventArgs e)
         {
-            var bidding = new Bid {  BiddAmt = Int32.Parse(txtAmount.Text), TimePeriod = Int32.Parse(txtTime.Text), Bidder = "diksha.bajaj@hpe.com", ProjectId = proj[0].Id };
-
-            if ((btnSubmit.Content).ToString() == "Bid")
+            Debug.Write("Countries count: " + countries.Count);
+            string user = (string)Global.GetRepositoryValue("userName");
+            for (var i = 0; i < countries.Count; i++)
             {
-                await InsertBid(bidding);
+                Debug.WriteLine(countries[i]);
             }
-            else if ((btnSubmit.Content).ToString() == "Update")
+            for(i=0;i<countries.Count;i++)
             {
-                bids = await bidTable
-                            .Where(Bid => Bid.ProjectId == proj[0].Id)
-                            .Where(Bid => Bid.Bidder == "diksha.bajaj@hpe.com")
-                            .ToCollectionAsync();
-                bid = bids.ToList();
-                bidding = new Bid { Id = bid[0].Id, BiddAmt = Int32.Parse(txtAmount.Text), TimePeriod = Int32.Parse(txtTime.Text), Bidder = "diksha.bajaj@hpe.com", ProjectId = proj[0].Id };
+                StackPanel child = sPanel.FindName("panel-" + countries[i]) as StackPanel;
+                TextBlock child1 = child.FindName("country-" + countries[i]) as TextBlock;
+                TextBox child2 = child.FindName("bid-" + countries[i]) as TextBox;
+                TextBox child3 = child.FindName("highest-" + countries[i]) as TextBox;
+                Debug.Write("Bid1: " + child2.Name);
+                Debug.Write("Bid2: " + child2.Text);
+                var bidding = new Bid {  BiddAmt = Int32.Parse(child2.Text), Bidder = user, EventId = parameter[0], Countr=countries[i] };
 
-                await UpdateBid(bidding);
-            }
+                if ((btnSubmit.Content).ToString() == "Bid")
+                {
+                     await InsertBid(bidding);
+                }
+                 else if ((btnSubmit.Content).ToString() == "Update")
+                {
+                   bid = await bidTable
+                            .Where(Bid => Bid.EventId == parameter[0])
+                            .Where(Bid => Bid.Bidder == user)
+                            .Where(Bid => Bid.Countr == countries[i])
+                            .ToListAsync();
+                    if (bid.Count != 0)
+                    {
+                        bidding = new Bid { Id = bid[0].Id, BiddAmt = Int32.Parse(child2.Text), Bidder = user, EventId = parameter[0], Countr = countries[i] };
+                        await UpdateBid(bidding);
+                    }
+                    
+                    else
+                    {
+                        bidding = new Bid { BiddAmt = Int32.Parse(child2.Text), Bidder = user, EventId = parameter[0], Countr = countries[i] };
+                        await InsertBid(bidding);
+                    }
+
+
+                }
             
-            Frame.Navigate(typeof(MyProjects));
+            //Frame.Navigate(typeof(MySportEvents));
            
+        }
         }
         private async Task InsertBid(Bid bidding)
         {
@@ -174,11 +202,12 @@ namespace teamnotfound
 
         private async Task UpdateBid(Bid bidding)
         {
-           /*bids = await bidTable
-                            .Where(Bid => Bid.ProjectId == bid.ProjectId)
+           bids = await bidTable
+                            .Where(Bid => Bid.EventId == bidding.EventId)
                             .ToCollectionAsync();
-            Bid bd= bids.FirstOrDefault();*/
-        /*await bidTable.UpdateAsync(bidding);
-    }*/
+            Bid bd= bids.FirstOrDefault();
+            await bidTable.UpdateAsync(bidding);
+        }
+        
     }
 }

@@ -1,8 +1,13 @@
-﻿using System;
+﻿using Microsoft.WindowsAzure.MobileServices;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using teamnotfound.Common;
+using teamnotfound.DataModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,9 +27,48 @@ namespace teamnotfound.View
     /// </summary>
     public sealed partial class SearchEvent : Page
     {
+        private IMobileServiceTable<Event> eventTable = App.MobileService.GetTable<Event>();
+       // private MobileServiceCollection<Event, Event> events;
+        private IMobileServiceTable<Bid> bidTable = App.MobileService.GetTable<Bid>();
+       // private MobileServiceCollection<Bid, Bid> bids;
         public SearchEvent()
         {
             this.InitializeComponent();
+            getProjects();
+        }
+        private async void getProjects()
+        {
+
+            List<Event> events = await eventTable
+               .Where(Event => Event.Status == "Bidding")
+                   .ToListAsync();
+            
+            listView.ItemsSource = events;
+        }
+        private async void Project_Tapped(object sender, RoutedEventArgs e)
+        {
+            List<String> param = new List<String>();
+            string id = ((sender as StackPanel).FindName("eventId") as TextBlock).Text;
+            Debug.Write("Ïd: " + id);
+            param.Add(id);
+            string user = (string)Global.GetRepositoryValue("userName");
+            List<Bid> bids = await bidTable
+                    .Where(Bid => Bid.EventId == id)
+                    .Where(Bid => Bid.Bidder == user)           //Bidder should come from global.cs
+                    .ToListAsync();
+            
+            if (bids.Count == 0)    // The user has not bid for this project before
+            {
+                Debug.Write("Add Bid");
+                param.Add("Add");
+            }
+            else                  // The user wants to update the bid for this project
+            {
+                Debug.Write("Update Bid");
+                param.Add("Update");
+            }
+            Debug.Write("Text: " + id);
+            Frame.Navigate(typeof(Bidding), param);
         }
     }
 }

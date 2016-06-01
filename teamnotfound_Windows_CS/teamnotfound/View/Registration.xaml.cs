@@ -151,7 +151,11 @@ namespace teamnotfound.View
                     await InsertUser(user);
                     Global.SetRepositoryValue("userName", user.Email);
                     await InsertUserCred(userCred);
-                    Frame.Navigate(typeof(DashBoard));
+                    //Frame.Navigate(typeof(DashBoard));
+                    if(user.UserType=="Admin")
+                        Frame.Navigate(typeof(DashBoardAdmin));
+                    else if (user.UserType == "User")
+                        Frame.Navigate(typeof(DashBoard));
                 }
             }
         }

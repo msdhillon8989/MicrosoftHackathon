@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using teamnotfound.Common;
 using teamnotfound.DataModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -18,65 +19,59 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace teamnotfound
+namespace teamnotfound.View
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MyProjects : Page
+    public sealed partial class MySportEvents : Page
     {
-
-        private IMobileServiceTable<Project> projectTable = App.MobileService.GetTable<Project>();
-        private MobileServiceCollection<Project, Project> projects;
-        private IMobileServiceTable<Category> categoryTable = App.MobileService.GetTable<Category>();
-        private MobileServiceCollection<Category, Category> category;
+        private IMobileServiceTable<Event> eventTable = App.MobileService.GetTable<Event>();
         private IMobileServiceTable<Bid> bidTable = App.MobileService.GetTable<Bid>();
-        private MobileServiceCollection<Bid, Bid> bid;
-        private MobileServiceCollection<Project, Project> projs;
-        public MyProjects()
+
+        public MySportEvents()
         {
             this.InitializeComponent();
-            //getBids();
+            getBids();
         }
-       /* private async void getBids()
+        private async void getBids()
         {
             // Bidder must come from global.cs
-            bid = await bidTable
-               .Where(Bid => Bid.Bidder == "diksha.bajaj@hpe.com")
-                   .ToCollectionAsync();
+           // string user = (string)Global.GetRepositoryValue("userName");
+            List<Bid> bid = await bidTable
+               .Where(Bid => Bid.Bidder == "Diksha@hpe.com")
+                   .ToListAsync();
 
-            List<Bid> bidList = new List<Bid>();
-            bidList = bid.ToList();
             List<String> PIdList = new List<String>();
-            Debug.Write("Count: " + bidList.Count);
-            for (var i = 0; i < bidList.Count; i++)
+            Debug.Write("Count: " + bid.Count);
+            for (var i = 0; i < bid.Count; i++)
             {
-                PIdList.Add(bidList[i].ProjectId);
+                PIdList.Add(bid[i].EventId);
             }
-            getProjectDetails(PIdList);
-            
+            getEventDetails(PIdList);
+
         }
-        private async void getProjectDetails(List<String> PIdList)
+        private async void getEventDetails(List<String> PIdList)
         {
-            List<Project> proj = new List<Project>();
+            List<Event> proj = new List<Event>();
             for (var i = 0; i < PIdList.Count; i++)
             {
                 Debug.Write("Inside for loop");
-                projects = await projectTable
-                    .Where(Project => Project.Id == PIdList[i])
-                    .ToCollectionAsync();
+                List<Event> events = await eventTable
+                    .Where(Event => Event.Id == PIdList[i])
+                    .ToListAsync();
 
-                
-                proj.AddRange(projects);
+
+                proj.AddRange(events);
             }
             Debug.Write("Total projects: " + proj.Count);
-            gridView.ItemsSource = proj;
+            listView.ItemsSource = proj;
         }
         private void Project_Tapped(object sender, TappedRoutedEventArgs e)
         {
             string text = ((sender as StackPanel).FindName("txtStatus") as TextBlock).Text;
             Debug.Write("Status: " + text);
-            string pId = ((sender as StackPanel).FindName("projectId") as TextBlock).Text;
+            string pId = ((sender as StackPanel).FindName("eventId") as TextBlock).Text;
             if (text == "Bidding")
             {
                 List<string> param = new List<string>();
@@ -86,14 +81,10 @@ namespace teamnotfound
             }
             else if (text == "Assigned")
             {
-                Frame.Navigate(typeof(UploadSolution),pId);
+                Frame.Navigate(typeof(BillingPage), pId);
             }
-            else
-            {
-                //Frame.Navigate(typeof(ProjectCategories));
-            }
+            else { }
 
-        }*/
-
+        }
     }
 }

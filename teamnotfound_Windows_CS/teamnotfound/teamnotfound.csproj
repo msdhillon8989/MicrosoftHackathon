@@ -144,11 +144,14 @@
     <Compile Include="View\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\MyEvents.xaml.cs">
+      <DependentUpon>MyEvents.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MyPost.xaml.cs">
       <DependentUpon>MyPost.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MyProjects.xaml.cs">
-      <DependentUpon>MyProjects.xaml</DependentUpon>
+    <Compile Include="View\MySportEvents.xaml.cs">
+      <DependentUpon>MySportEvents.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PostProject.xaml.cs">
       <DependentUpon>PostProject.xaml</DependentUpon>
@@ -244,13 +247,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\MyEvents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MyPost.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\MyProjects.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="View\MySportEvents.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PostProject.xaml">
       <SubType>Designer</SubType>

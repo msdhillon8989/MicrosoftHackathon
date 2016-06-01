@@ -96,7 +96,7 @@ namespace teamnotfound.View
 
         }
 
-        private void RegisterButtonTextBlock_Tapped(object sender, TappedRoutedEventArgs e)
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Registration));
         }

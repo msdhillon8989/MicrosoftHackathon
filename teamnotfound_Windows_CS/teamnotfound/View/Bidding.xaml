@@ -16,8 +16,8 @@
             <TextBlock HorizontalAlignment="Left" Margin="10,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200">
         	                <Run Text="Event Title"/>
             </TextBlock> 
-            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0"  VerticalAlignment="Top" Width="200">
-        	                <Run Text="Event Title"/>
+            <TextBlock x:Name="title" HorizontalAlignment="Left" Margin="10,0,0,0"  VerticalAlignment="Top" Width="200">
+        	                
             </TextBlock>
             <TextBlock HorizontalAlignment="Left" Margin="10,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200">
         	                <Run Text="Countries"/>
@@ -37,7 +37,7 @@
 
         <StackPanel x:Name="sPanel" Orientation="Vertical" Margin="150,485,0,0">
         </StackPanel>
-        <Button x:Name="btnSubmit" Content="Bid" HorizontalAlignment="Center" Margin="40" Width="245"/>
+        <Button x:Name="btnSubmit" Content="Bid" HorizontalAlignment="Center" Margin="40" Width="245" Click="button_Click"/>
 
 
 

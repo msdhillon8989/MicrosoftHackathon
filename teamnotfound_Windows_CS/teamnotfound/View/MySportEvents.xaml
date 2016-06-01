@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="teamnotfound.View.SearchEvent"
+    x:Class="teamnotfound.View.MySportEvents"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:teamnotfound.View"
@@ -45,8 +45,9 @@
                                         <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="5" ></TextBlock>
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   >
-                                        <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="{x:Bind Status}" ></TextBlock>
-                                        <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="Bidding" ></TextBlock>
+                                        <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="Status" ></TextBlock>
+                                        <TextBlock x:Name="txtStatus" FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="{x:Bind Status}" ></TextBlock>
+                                        
                                     </StackPanel>
 
                                 </StackPanel>

@@ -20,7 +20,7 @@ namespace teamnotfound.DataModel
         [JsonProperty(PropertyName = "bidd_amt")]
         public int BiddAmt { set; get; }
         [JsonProperty(PropertyName = "country")]
-        public int Countr { get; set; }
+        public String Countr { get; set; }
 
     }
 }
