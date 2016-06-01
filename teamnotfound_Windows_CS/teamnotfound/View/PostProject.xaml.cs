@@ -17,6 +17,8 @@ using teamnotfound.DataModel;
 using System.Threading.Tasks;
 using teamnotfound.Common;
 using System.Diagnostics;
+using System.Net.Http;
+using System.Dynamic;
 
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
@@ -56,7 +58,20 @@ namespace teamnotfound.View
             //await App.MobileService.SyncContext.PushAsync(); // offline sync
         }
 
+        private async void sendNotification(String content)
+        {
+            using (var client = new HttpClient())
+            {
+                Uri requestUri = new Uri("http://hire4hire.azurewebsites.net/api/Notifications"); //replace your Url  
+                dynamic dynamicJson = new ExpandoObject();
+                dynamicJson.content = content;
+                string json = "";
+                json = Newtonsoft.Json.JsonConvert.SerializeObject(dynamicJson);
+                var objClint = new System.Net.Http.HttpClient();
+                await objClint.PostAsync(requestUri, new StringContent(json, System.Text.Encoding.UTF8, "application/json"));
+            }
 
+        }
         private async void button_Click(object sender, RoutedEventArgs e)
         {
             var selected = location.SelectedIndex;
@@ -87,7 +102,7 @@ namespace teamnotfound.View
 
             InsertEvent(event1);
 
-            
+            sendNotification("New Event added "+event1.Title+" closing on "+event1.EndDate);
 
 
 

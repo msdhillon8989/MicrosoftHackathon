@@ -1,17 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using teamnotfound.DataModel;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using System.Diagnostics;
 using Microsoft.WindowsAzure.MobileServices;
@@ -42,11 +31,57 @@ namespace teamnotfound.View
 
         }
 
-        private void getCountry()
+        private async void getCountry()
         {
-             IMobileServiceTable<Bid> bidTable = App.MobileService.GetTable<Bid>();
+            IMobileServiceTable<Bid> bidTable = App.MobileService.GetTable<Bid>();
             Hashtable ht = new Hashtable();
+            Hashtable stht = new Hashtable();
+            MobileServiceCollection<Bid, Bid> bids = await bidTable.Where(Bid => Bid.EventId == event1.ToString()).ToCollectionAsync();
+            
+            foreach (var _bid in bids)
+            {
+                var country = _bid.Countr;
+                var count = ht[country];
+                if (stht[country] == null)
+                {
+                    stht[country] = "Open";
+                }
+
+                if(_bid.Status!=null && _bid.Status.ToString() == "Accepted")
+                {
+                    stht[country] = "Assigned";
+                }
+
+                if(count==null)
+                {
+                    ht.Add(country, 1);
+                }
+                else
+                {
+                    var x = Int32.Parse(count.ToString()) + 1;
+                    ht.Add(country, x);
+                }
+            }
+
+            List<CountryBasedBidCount> countryBidCount = new List<CountryBasedBidCount>();
+
+            ICollection key = ht.Keys;
+
+            foreach (string k in key)
+            {
+                Debug.WriteLine(k + ": " + ht[k]);
+                CountryBasedBidCount cc = new CountryBasedBidCount();
+                cc.country = k;
+                cc.count = ht[k].ToString();
+                cc.Status = stht[k].ToString();
+
+
+                countryBidCount.Add(cc);
+            }
+
+            countryBidCountlist.ItemsSource = countryBidCount;
+
 
         }
-    }
+}
 }

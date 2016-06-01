@@ -14,44 +14,43 @@
         <StackPanel VerticalAlignment="Top" Margin="0,0,0,0" Background="#FF060656" >
             <TextBlock x:Name="Hello"  HorizontalAlignment="Center"   Style="{StaticResource HeaderTextBlockStyle}" TextWrapping="Wrap" Text="Countries" Height="75" SelectionHighlightColor="#FF334676"  Foreground="Gray" />
         </StackPanel>
-
-
         <StackPanel Background="#FFdddddd"   Margin="10,90,10,10">
+            <ListView x:Name="countryBidCountlist" HorizontalAlignment="Stretch">
+                <ListView.ItemTemplate>
+                    <DataTemplate  x:DataType="data:CountryBasedBidCount" >
 
-            <StackPanel Orientation="Vertical"  Padding="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" >
-          
-                <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"   >
 
-                    <StackPanel Orientation="Vertical"   HorizontalAlignment="Left" VerticalAlignment="Top"   >
+                        <StackPanel Orientation="Vertical"  Padding="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" >
 
-                        <StackPanel Orientation="Horizontal"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   >
-                            <TextBlock  Width="150" FontSize="20" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="India" ></TextBlock>
+                            <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"   >
+
+                                <StackPanel Orientation="Vertical"   HorizontalAlignment="Left" VerticalAlignment="Top"   >
+
+                                    <StackPanel Orientation="Horizontal"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"   >
+                                        <TextBlock  Width="150" FontSize="20" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="{Binding country}" ></TextBlock>
+                                    </StackPanel>
+
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical" Margin="80,0,0,0"  HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
+
+                                    <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   >
+                                        <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Bids : " ></TextBlock>
+                                        <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="{Binding count}" ></TextBlock>
+                                    </StackPanel>
+                                    <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"  >
+                                        <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Status : " ></TextBlock>
+                                        <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="{Binding Status}" ></TextBlock>
+                                    </StackPanel>
+
+                                </StackPanel>
+                            </StackPanel>
                         </StackPanel>
-
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical" Margin="80,0,0,0"  HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
-
-                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   >
-                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Bids : " ></TextBlock>
-                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="3" ></TextBlock>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"  >
-                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Status : " ></TextBlock>
-                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="Bidding" ></TextBlock>
-                        </StackPanel>
-
-                    </StackPanel>
-                </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
 
-
-
-
-            </StackPanel>
-
-
-
-            <StackPanel Orientation="Vertical"  Padding="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" >
+        <StackPanel Orientation="Vertical"  Padding="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" >
 
                 <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"   >
 

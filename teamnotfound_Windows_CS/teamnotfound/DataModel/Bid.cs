@@ -21,8 +21,15 @@ namespace teamnotfound.DataModel
         public int BiddAmt { set; get; }
         [JsonProperty(PropertyName = "country")]
         public String Countr { get; set; }
+<<<<<<< HEAD
         /*[JsonProperty(PropertyName = "status")]
         public String Status { get; set; }
         */
+=======
+        [JsonProperty(PropertyName = "status")]
+        public String Status { get; set; }
+
+
+>>>>>>> origin/master
     }
 }
