@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using teamnotfound.Common;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -53,9 +54,9 @@ namespace teamnotfound.View
             card.ExpirationMonth = month.Text;
             card.ExpirationYear = year.Text;
             card.AddressCountry = "USA";
-            card.ReceiptEmail = "uryathi834@gmail.com";
+            card.ReceiptEmail = (string)Global.GetRepositoryValue("userName");
             card.AddressCity = "abc";
-            mycust.Email = "uryathi834 @gmail.com";
+            mycust.Email = (string)Global.GetRepositoryValue("userName");
             card.Cvc = cvv.Text;
             mycust.PlanId = "123456";
            // mycust.TrialEnd =
