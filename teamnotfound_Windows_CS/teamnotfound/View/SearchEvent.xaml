@@ -13,20 +13,15 @@
         <StackPanel VerticalAlignment="Top" Margin="0,0,0,0" Background="#FF060656" >
             <TextBlock x:Name="Hello"  HorizontalAlignment="Center"   Style="{StaticResource HeaderTextBlockStyle}" TextWrapping="Wrap" Text="Events" Height="75" SelectionHighlightColor="#FF334676"  Foreground="Gray" />
         </StackPanel>
-        <ListView Name="listView" Margin="63,97,63,-76" IsItemClickEnabled="False">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="data:Event">
-<<<<<<< HEAD
-                    <StackPanel Background="#FFdddddd"   Margin="10,90,10,10" Tapped="Project_Tapped">
-                        <TextBlock x:Name="eventId" Text="{x:Bind Id}"></TextBlock>
-                        <StackPanel Orientation="Vertical"  Padding="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" >
 
-=======
-                    
-                                
-                            <StackPanel Orientation="Vertical" Tapped="Project_Tapped" Padding="5,5,5,5"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" >
-                            <TextBlock x:Name="eventId" Visibility="Collapsed" Text="{Binding Id}"></TextBlock>               
->>>>>>> origin/master
+        <StackPanel Background="#FFdddddd"   Margin="10,90,10,10" >
+            <ListView Name="listView" Margin="10,10,10,0" IsItemClickEnabled="False">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="data:Event">
+
+
+                        <StackPanel Orientation="Vertical" Tapped="Project_Tapped" Padding="5,5,5,5"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" >
+                            <TextBlock x:Name="eventId" Visibility="Collapsed" Text="{Binding Id}"></TextBlock>
                             <StackPanel Orientation="Horizontal"  HorizontalAlignment="Stretch" VerticalAlignment="Top">
                                 <TextBlock FontSize="12" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Title : " ></TextBlock>
                                 <TextBlock FontSize="12"  Foreground="Gray" VerticalAlignment="Bottom" Text="{x:Bind Title}" ></TextBlock>
@@ -59,11 +54,11 @@
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
 
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
 
 
 
