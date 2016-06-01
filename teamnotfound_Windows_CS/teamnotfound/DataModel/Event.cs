@@ -25,6 +25,9 @@ namespace teamnotfound.DataModel
         [JsonProperty(PropertyName = "status")]
         public string Status { get; set; }
         public int total_bids { get; set; }
+        public String country { get; set; }
+        public String bid_amt { get; set; }
+
 
     }
 }

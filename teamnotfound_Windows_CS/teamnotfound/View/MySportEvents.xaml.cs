@@ -34,11 +34,13 @@ namespace teamnotfound.View
             this.InitializeComponent();
             getBids();
         }
+        List<Event> events=new List<Event>();
+        List<Bid> bid = new List<Bid>();
         private async void getBids()
         {
             // Bidder must come from global.cs
            string user = (string)Global.GetRepositoryValue("userName");
-            List<Bid> bid = await bidTable
+           bid = await bidTable
                .Where(Bid => Bid.Bidder == user)
                    .ToListAsync();
 
@@ -46,22 +48,30 @@ namespace teamnotfound.View
             Debug.Write("Count: " + bid.Count);
             for (var i = 0; i < bid.Count; i++)
             {
-                PIdList.Add(bid[i].EventId);
+                //PIdList.Add(bid[i].EventId);
+                //List<Event> proj = new List<Event>();
+                events = await eventTable   .Where(Event => Event.Id == bid[i].EventId).ToListAsync();
+                Event _event1 = events.ElementAt(0);
+                bid.ElementAt(i).EventId = _event1.Title;
+
             }
-            getEventDetails(PIdList);
+            listView.ItemsSource = bid;
+            //getEventDetails(PIdList);
 
         }
+        
         private async void getEventDetails(List<String> PIdList)
         {
             List<Event> proj = new List<Event>();
             for (var i = 0; i < PIdList.Count; i++)
             {
                 Debug.Write("Inside for loop");
-                List<Event> events = await eventTable
+                events = await eventTable
                     .Where(Event => Event.Id == PIdList[i])
                     .ToListAsync();
 
-
+                //events[i].country = bid[i].Countr;
+                //events[i].bid_amt = (bid[i].BiddAmt).ToString();
                 proj.AddRange(events);
             }
             Debug.Write("Total projects: " + proj.Count);
@@ -79,7 +89,7 @@ namespace teamnotfound.View
                 param.Add("Update");
                 Frame.Navigate(typeof(Bidding), param);
             }
-            else if (text == "Assigned")
+            else if (text == "Accepted")
             {
                 Frame.Navigate(typeof(BillingPage), pId);
             }

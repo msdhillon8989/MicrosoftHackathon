@@ -11,47 +11,36 @@
 
     <Grid Background="Gray">
         <StackPanel VerticalAlignment="Top" Margin="0,0,0,0" Background="#FF060656" >
-            <TextBlock x:Name="Hello"  HorizontalAlignment="Center"   Style="{StaticResource HeaderTextBlockStyle}" TextWrapping="Wrap" Text="Events" Height="75" SelectionHighlightColor="#FF334676"  Foreground="Gray" />
+            <TextBlock x:Name="Hello"  HorizontalAlignment="Center"   Style="{StaticResource HeaderTextBlockStyle}" TextWrapping="Wrap" Text="My Events" Height="75" SelectionHighlightColor="#FF334676"  Foreground="Gray" />
         </StackPanel>
         <StackPanel Background="#FFdddddd"   Margin="10,90,10,10" Tapped="Project_Tapped">
             <ListView Name="listView" Margin="10,10,10,0" IsItemClickEnabled="False">
                 <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="data:Event">
+                    <DataTemplate x:DataType="data:Bid">
                         <StackPanel Orientation="Vertical"  Tapped="Project_Tapped">
                             <TextBlock x:Name="eventId" Visibility="Collapsed" Text="{x:Bind Id}"></TextBlock>
+                            <TextBlock x:Name="txtStatus" Visibility="Collapsed" Text="{x:Bind Status}"></TextBlock>
                             <StackPanel Orientation="Vertical"  Padding="5,5,5,5" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656" >
 
                                 <StackPanel Orientation="Horizontal"  HorizontalAlignment="Stretch" VerticalAlignment="Top">
                                     <TextBlock FontSize="12" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Title : " ></TextBlock>
-                                    <TextBlock FontSize="12"  Foreground="Gray" VerticalAlignment="Bottom" Text="{x:Bind Title}" ></TextBlock>
+                                    <TextBlock FontSize="12"  Foreground="Gray" VerticalAlignment="Bottom" Text="{x:Bind EventId}" ></TextBlock>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
 
                                     <StackPanel Orientation="Vertical"   HorizontalAlignment="Left" VerticalAlignment="Top" >
 
                                         <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
-                                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Base Price : " ></TextBlock>
-                                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="{x:Bind BasePrice}" ></TextBlock>
+                                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="My Bid : " ></TextBlock>
+                                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="{x:Bind BiddAmt}" ></TextBlock>
                                         </StackPanel>
 
                                         <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
-                                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Bid Close Date : " ></TextBlock>
-                                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="{x:Bind CloseDate}"></TextBlock>
+                                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Country : " ></TextBlock>
+                                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="{x:Bind Countr}"></TextBlock>
                                         </StackPanel>
                                     </StackPanel>
-                                    <StackPanel Orientation="Vertical" Margin="90,0,0,0"  HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
-
-                                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"  >
-                                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Bids : " ></TextBlock>
-                                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="5" ></TextBlock>
-                                        </StackPanel>
-                                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"   >
-                                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="Status" ></TextBlock>
-                                            <TextBlock x:Name="txtStatus" FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="{x:Bind Status}" ></TextBlock>
-
-                                        </StackPanel>
-
-                                    </StackPanel>
+                                    
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
