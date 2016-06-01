@@ -107,6 +107,7 @@
     <Compile Include="DataModel\EventBidCount.cs" />
     <Compile Include="DataModel\Project.cs" />
     <Compile Include="DataModel\ProjectCount.cs" />
+    <Compile Include="DataModel\ShowUserBid.cs" />
     <Compile Include="DataModel\Skills.cs" />
     <Compile Include="DataModel\User.cs" />
     <Compile Include="DataModel\UserCred.cs" />
