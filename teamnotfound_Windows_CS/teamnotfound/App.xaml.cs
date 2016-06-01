@@ -1,9 +1,12 @@
-﻿using Microsoft.WindowsAzure.MobileServices;
+﻿using Microsoft.WindowsAzure.Messaging;
+using Microsoft.WindowsAzure.MobileServices;
 using System;
 using teamnotfound.View;
 
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.Networking.PushNotifications;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -21,6 +24,27 @@ namespace teamnotfound
             "https://teamnotfound.azurewebsites.net"
             
         );
+
+
+        private async void InitNotificationsAsync()
+        {
+            var channel = await PushNotificationChannelManager.CreatePushNotificationChannelForApplicationAsync();
+
+            var hub = new NotificationHub("NotifyMe", "Endpoint=sb://pushnotifymenamespace.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=jNenOrdM6otOKGSylK7Za7T3nrh0U2Sd3DtlohiVTy4=");
+            // var hub = new NotificationHub("teamnotfoundnotification", "Endpoint=sb://teamnotfound.servicebus.windows.net/;SharedAccessKeyName=DefaultListenSharedAccessSignature;SharedAccessKey=g81fOiaMD1aANi/Kf1/kQEEjGgH1PlGk5Z7AI43VTxM=");
+            var result = await hub.RegisterNativeAsync(channel.Uri);
+
+            // Displays the registration ID so you know it was successful
+          /*  if (result.RegistrationId != null)
+            {
+                var dialog = new MessageDialog("Registration successful: " + result.RegistrationId);
+                dialog.Commands.Add(new UICommand("OK"));
+                await dialog.ShowAsync();
+            }*/
+
+        }
+
+
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
@@ -46,7 +70,7 @@ namespace teamnotfound
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
-
+            InitNotificationsAsync();
             Frame rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
