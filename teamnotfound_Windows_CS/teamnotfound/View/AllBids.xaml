@@ -16,38 +16,50 @@
 
         <StackPanel Background="#FFdddddd"   Margin="10,90,10,10">
 
-            <StackPanel Orientation="Vertical"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656">
 
-                <StackPanel Orientation="Horizontal"   HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
+            <ListView x:Name="allBidsList" HorizontalAlignment="Stretch">
+                <ListView.ItemTemplate>
+                    <DataTemplate  x:DataType="data:ShowUserBid" >
 
-                    <StackPanel Orientation="Vertical" Padding="5,5,5,5"  HorizontalAlignment="Left" VerticalAlignment="Top"  >
 
-                        <StackPanel Orientation="Horizontal"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  >
-                            <TextBlock  Width="150" FontSize="20" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="Sony" ></TextBlock>
+
+
+
+                        <StackPanel Orientation="Vertical"  HorizontalAlignment="Stretch" Width="auto" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656">
+
+                            <StackPanel Orientation="Horizontal"  HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
+
+                                <StackPanel Orientation="Vertical" Padding="5,5,5,5"  HorizontalAlignment="Stretch" VerticalAlignment="Top"  >
+
+                                    <StackPanel Orientation="Horizontal"  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  >
+                                        <TextBlock  Width="150" FontSize="20" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom"  Text="{Binding username}" ></TextBlock>
+                                    </StackPanel>
+
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical" Margin="35,0,0,0" Padding="5,5,5,5"  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"   >
+
+                                    <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"  >
+                                        <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="Bid : " ></TextBlock>
+                                        <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text="{Binding bid}"></TextBlock>
+                                    </StackPanel>
+
+
+                                </StackPanel>
+                                <StackPanel Orientation="Vertical" Background="Gray" >
+                                    <TextBlock HorizontalAlignment="Stretch" Visibility="{Binding showButton}" Tapped="StackPanel_Tapped" Foreground="#FF060656" VerticalAlignment="Stretch">Assign</TextBlock>
+                                    <TextBlock HorizontalAlignment="Stretch" Foreground="#FF060656" Visibility="{Binding showAssigned}" VerticalAlignment="Center" Text="Accepted" ></TextBlock>
+                                </StackPanel>
+
+                            </StackPanel>
+
+
+
+
+
                         </StackPanel>
-
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical" Margin="35,0,0,0" Padding="5,5,5,5"  HorizontalAlignment="Stretch" VerticalAlignment="Bottom"   >
-
-                        <StackPanel Orientation="Horizontal"   HorizontalAlignment="Left" VerticalAlignment="Top"  >
-                            <TextBlock FontSize="10" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Bottom" Text="Bid : " ></TextBlock>
-                            <TextBlock FontSize="11"  Foreground="Gray" VerticalAlignment="Bottom" Text=" $60M" ></TextBlock>
-                        </StackPanel>
-
-
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Background="Gray" >
-                        <Button HorizontalAlignment="Stretch" Foreground="#FF060656" VerticalAlignment="Stretch">Assign</Button>
-                    </StackPanel>
-
-                </StackPanel>
-
-
-
-
-
-            </StackPanel>
-
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
             <StackPanel Orientation="Vertical"  HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,10,10,0" Background="#FF060656">
 
@@ -69,8 +81,9 @@
 
 
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Background="Gray" >
-                        <Button HorizontalAlignment="Stretch" Foreground="#FF060656" VerticalAlignment="Stretch">Assign</Button>
+                    <StackPanel Orientation="Vertical" Background="Gray" >
+                        <TextBlock HorizontalAlignment="Stretch" Visibility="Visible" Foreground="#FF060656"  VerticalAlignment="Center">Assign</TextBlock>
+                        <TextBlock HorizontalAlignment="Stretch" Foreground="#FF060656"  VerticalAlignment="Center" Text="Accepted" ></TextBlock>
                     </StackPanel>
 
                 </StackPanel>
